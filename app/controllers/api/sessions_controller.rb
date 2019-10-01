@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     if @user
       login(@user)
       render '/'
-    else
-      render json: ["Invalid input"] status: 401
+    # else
+    #   render json: ["Invalid input"] status: 401
     end
   end
 
@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
     if @user
       logout
       render '/'
-    else
-      render json: ["Not logged in"] status: 401
+    # else
+    #   render json: ["Not logged in"] status: 401
     end
   end
 end

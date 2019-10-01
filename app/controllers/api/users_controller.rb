@@ -12,8 +12,8 @@ class API::UsersController < ApplicationController
     if @user.save
       login(@user)
       render json: ["success"]
-    else  
-      render json: @user.errors.full_messages, status: 422
+    # else  
+    #   render json: @user.errors.full_messages, status: 422
     end
   end
 
