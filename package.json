@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "webpack --watch --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,9 @@
   "bugs": {
     "url": "https://github.com/d-hebert/listener/issues"
   },
-  "homepage": "https://github.com/d-hebert/listener#readme"
+  "homepage": "https://github.com/d-hebert/listener#readme",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  }
 }
