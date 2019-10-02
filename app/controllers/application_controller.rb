@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_logged_in
-    # unless current_user
-    #   render json: { base: ['invalid input'] }, status: 401
-    # end
+    unless current_user
+      render json: { base: ['invalid input'] }, status: 401
+    end
   end
 
   def logged_in?
