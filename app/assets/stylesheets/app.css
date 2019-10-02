@@ -1,5 +1,6 @@
 body {
-     background-color: #222326;
+    display: block;
+    background-color: #222326;
      color: white;
      font-family: 'Cabin', sans-serif;
      margin: 0;
@@ -12,12 +13,32 @@ body {
      display: flex;
  }
 
- .session-form {
+.session-form {
      display: flex;
      flex-direction: column;
      justify-content: center;
+     align-items: center;
+     height: 300px;
+     background: #222326;
      margin: 0 auto;
  }
+
+ .session-submit {
+    border: 0;
+    color: white;
+    background-color: rgb(45, 165, 45);
+    border-radius: 15px;
+    width: 180px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 13px;   
+}
+
+.form-input {
+    padding-left: 8px;
+}
 
  a {
     color: white;

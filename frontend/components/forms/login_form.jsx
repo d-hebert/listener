@@ -29,19 +29,23 @@ class LoginForm extends React.Component {
             <>
             <form onSubmit={this.handleSubmit} class="session-form">
                 <h3>To continue, log in to Listener.</h3>
-                <label>username
+                <label>
                     <input type="text" 
                         value={this.state.username}
                         onChange={this.update('username')}
+                        placeholder="Username"
+                        class="form-input"
                     />
                 </label>
-                <label>password
+                <label>
                     <input type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
+                        placeholder="Password"
+                        class="form-input"
                     />
                 </label>   
-                <input type="submit" value="LOG IN"/> 
+                <input type="submit" value="LOG IN" className="session-submit" /> 
                 <h3>Don't have an account?</h3>
                 <Link to="/signup">SIGN UP FOR LISTENER</Link>
             </form>
