@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
     render () {
         return (
             <>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} class="session-form">
                 <h3>To continue, log in to Listener.</h3>
                 <label>username
                     <input type="text" 
@@ -42,9 +42,9 @@ class LoginForm extends React.Component {
                     />
                 </label>   
                 <input type="submit" value="LOG IN"/> 
+                <h3>Don't have an account?</h3>
+                <Link to="/signup">SIGN UP FOR LISTENER</Link>
             </form>
-            <h3>Don't have an account?</h3>
-            <Link to="/signup">SIGN UP FOR LISTENER</Link>
             </>
         )
     }

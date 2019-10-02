@@ -1,0 +1,24 @@
+body {
+     background-color: #222326;
+     color: white;
+     font-family: 'Cabin', sans-serif;
+     margin: 0;
+     padding: 0;
+     border: 0;
+     height: 100%;
+ }
+
+ .app {
+     display: flex;
+ }
+
+ .session-form {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin: 0 auto;
+ }
+
+ a {
+    color: white;
+ }

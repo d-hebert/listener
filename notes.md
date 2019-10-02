@@ -15,7 +15,8 @@
       made root_reducer.js, it is empty
 
     *next*
-      - remember me checkbox
+      - remember me checkbox?
+      - build color palette
 
 /////////////////////////
 

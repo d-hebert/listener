@@ -17,10 +17,10 @@ class UserNav extends React.Component {
             ) 
         } else {
             content = (
-                <>
-                <Link to="/signup">Sign up</Link>
-                <Link to="/login">Log in</Link>
-                </>
+                <div className="user-nav">
+                <Link to="/signup" className="session-button signup">SIGN UP</Link>
+                <Link to="/login" className="session-button login">LOG IN</Link>
+                </div>
             )
         }
         return content;
@@ -29,7 +29,6 @@ class UserNav extends React.Component {
     render () {
         return (
             <div>
-            <h2>hello from top_nav/user_nav</h2>
             {this.format()}
             </div>
 

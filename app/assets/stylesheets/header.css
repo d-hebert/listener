@@ -1,0 +1,40 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 230px;
+    background-color: black;
+    /* padding-left: 10px; */
+}
+
+.user-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.session-button {
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 180px;
+    height: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    font-size: 13px;   
+}
+
+.login {
+    background-color: rgb(24, 23, 23);
+    border-color: rgb(73, 73, 73);
+    border-width: 2px
+}
+
+.signup {
+    background-color: white;
+    color: black;
+}
