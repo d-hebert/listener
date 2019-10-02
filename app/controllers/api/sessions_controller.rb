@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render '/api/users/show'
     else
-      render '/api/users/show', status: 401
+      render json: ["Invalid input"], status: 401
     end
   end
 
@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
       logout
       render '/api/users/show'
     else
-      render '/api/users/show', status: 401
+      render json: ["Not logged in"], status: 401
     end
   end
 end
