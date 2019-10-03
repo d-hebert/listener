@@ -11,5 +11,3 @@ User.destroy_all
 guest = User.create!(username: 'guest_user', email: 'guest@listener.com', password: 'password')
 
 user1 = User.create!(username: 'dhebert', email: 'd.hebert@live.com', password: 'password')
-user2 = User.create!(username: 'thebert', email: 't.hebert@live.com', password: 'password')
-user3 = User.create!(username: 'chebert', email: 'c.hebert@live.com', password: 'password')
