@@ -8,7 +8,7 @@ import Modal from './modal';
 
 const App = () => {
     return (
-        <div className="app">
+        <div className="app" >
             <header>
                 <h2 className="logo-text">
                     <span className="l1">L</span>
@@ -18,7 +18,7 @@ const App = () => {
                 </h2>
                 <UserNavContainer />
             </header>
-
+            <img src={window.redbg} className="background" />
             <Modal />
             {/* <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} /> */}

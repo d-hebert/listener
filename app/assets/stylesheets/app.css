@@ -1,6 +1,5 @@
 body {
     display: block;
-    background-color: #222326;
      color: white;
      font-family: 'Cabin', sans-serif;
      margin: 0;
@@ -8,6 +7,15 @@ body {
      border: 0;
      height: 100%;
      position: relative;
+     z-index: 2;
+ }
+
+ .background {
+     position: absolute;
+     z-index: -1;   
+     height: 100%;
+     width: 100%;
+     filter: grayscale(0.2) blur(0.8px) brightness(30%);
  }
 
  button:focus {
