@@ -57,3 +57,16 @@ cam = {user: {
   password: 'password',
   email: 'c.hebert@live.com'
 }}
+
+
+
+/////////////////////////
+
+colors Primary Color:
+blues
+2BA7F7	478CB9	0E67A1	60BEFB	89CEFB
+Complementary Color:
+burnt orange
+FF9C1F	BF8841	A6610A	FFB557	FFC984
+
+FFBE00

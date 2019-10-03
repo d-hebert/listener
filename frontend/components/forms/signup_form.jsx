@@ -9,13 +9,25 @@ class LoginForm extends React.Component {
             password: "",
             email: ""
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.guestLogin = this.guestLogin.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
+        this.props.closeModal();
+    }
+
+    guestLogin(e) {
+        e.preventDefault();
+        const guest = {
+            username: 'guest_user',
+            password: 'password'
+        }
+        this.props.login(guest);
+        this.props.closeModal();
     }
 
     update(field) {
@@ -28,14 +40,18 @@ class LoginForm extends React.Component {
     render() {
         return (
             <>
-                <form onSubmit={this.handleSubmit} class="session-form">
-                    <h3>Sign up with your email address</h3>
+                <form onSubmit={this.handleSubmit} className="session-form">
+                    <div className="modal-logo">
+                        <img src={window.logo} className="modal-logo-img" />
+                    </div>
+                    <button className="guest-button" onClick={this.guestLogin}>ENTER AS GUEST</button>
+                    <div className="or-block"><hr></hr><span className="or">OR</span><hr></hr></div>
                     <label>
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="What should we call you?"
-                            class="form-input"
+                            className="form-input"
                         />
                     </label>
                     <label>
@@ -43,7 +59,7 @@ class LoginForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email address"
-                            class="form-input"
+                            className="form-input"
                         />
                     </label>
                     <label>
@@ -51,12 +67,12 @@ class LoginForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
-                            class="form-input"
+                            className="form-input"
                         />
                     </label>
                     <input type="submit" value="SIGN UP" className="session-submit" />
-                <h3>Already have an account?</h3>
-                <Link to="/login">Log in</Link>
+                    {/* <Link to="/login" className="session-flip">LOG IN</Link> */}
+                    <Link to="/" className="session-flip" onClick={() => this.props.openModal('login')}>LOG IN</Link>
                 </form>
             </>
         )

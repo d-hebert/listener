@@ -4,17 +4,24 @@ import { AuthRoute } from '../util/route_util'
 import UserNavContainer from './left_nav/user_nav_container';
 import LoginFormContainer from './forms/login_form_container';
 import SignupFormContainer from './forms/signup_form_container';
+import Modal from './modal';
 
 const App = () => {
     return (
-        <div class="app">
+        <div className="app">
             <header>
-                <h2>Listener</h2>
+                <h2 className="logo-text">
+                    <span className="l1">L</span>
+                    <span className="l2">i</span>
+                    <span className="rest">stener</span>
+                    <span className="l3">.</span>
+                </h2>
                 <UserNavContainer />
             </header>
 
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <Modal />
+            {/* <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} /> */}
         </div>
     )
 }

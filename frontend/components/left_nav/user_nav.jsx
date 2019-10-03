@@ -11,15 +11,20 @@ class UserNav extends React.Component {
         if (this.props.currentUser) {
             content = (
                 <>
-                <h2>hi, {this.props.currentUser.username}</h2>
-                <button onClick={this.props.logout}>logout</button>
+                    <div className="user-nav">
+                    <h4 className="greeting-temp">hi, {this.props.currentUser.username}</h4>
+                    {/* <button className="session-button login" onClick={this.props.logout}>logout</button> */}
+                    <Link to="/" className="session-button login" onClick={this.props.logout}>LOG OUT</Link>
+                    </div>
                 </>
             ) 
         } else {
             content = (
                 <div className="user-nav">
-                <Link to="/signup" className="session-button signup">SIGN UP</Link>
-                <Link to="/login" className="session-button login">LOG IN</Link>
+                <Link to="/" className="session-button signup" onClick={() => this.props.openModal('signup')}>SIGN UP</Link>
+                <Link to="/" className="session-button login" onClick={() => this.props.openModal('login')}>LOG IN</Link>
+                    {/* <button className="session-button signup" onClick={() => this.props.openModal('signup')}>LOG IN</button>
+                    <button className="session-button login" onClick={() => this.props.openModal('login')}>SIGN UP</button> */}
                 </div>
             )
         }

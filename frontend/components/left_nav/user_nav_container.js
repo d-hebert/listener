@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions'
 import UserNav from './user_nav';
+import { openModal } from '../../actions/modal_actions'
 
 const msp = (state) => {
     const currentUser = state.entities.users[state.session.id]
@@ -11,7 +12,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
     return {
-        logout: () => { dispatch(logout()) }
+        logout: () => { dispatch(logout()) },
+        openModal: (formType) => dispatch(openModal(formType))
     }
 }
 

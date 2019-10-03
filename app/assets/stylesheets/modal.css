@@ -1,0 +1,25 @@
+ .modal-bg {
+  transition: all 0.05s ease-in-out;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: 222326;
+  background: linear-gradient(180deg, rgb(32, 32, 31) 0%, rgb(17, 17, 17) 51%, #000000 75%);
+  z-index: 5;
+}
+
+.modal-form {
+  position: absolute;
+  top: 30%;
+  height: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+
+.modal-logo-img {
+    height: 40px;
+    width: 40px;
+ }

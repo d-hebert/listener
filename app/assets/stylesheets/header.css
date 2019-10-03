@@ -15,27 +15,71 @@ header {
     justify-content: space-between;
     height: 100px;
     margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.greeting-temp {
+    /* border: 1px solid white; */
+    /* border-radius: 15px; */
+    width: 180px;
+    height: 22px;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    font-size: 15px;   
+    font-weight: bold;
+    padding-top: 7px;
+    letter-spacing: 2px;
 }
 
 .session-button {
     border: 1px solid white;
     border-radius: 15px;
     width: 180px;
-    height: 25px;
+    height: 22px;
     text-align: center;
     text-decoration: none;
     margin: auto;
-    font-size: 13px;   
+    font-size: 11px;   
+    font-weight: bold;
+    padding-top: 7px;
+    letter-spacing: 2px;
 }
 
 
 .login {
-    background-color: rgb(24, 23, 23);
-    border-color: rgb(73, 73, 73);
-    border-width: 2px
+    background-color: #151211;
+    border: 2px solid #b3b3b3;
+    color: #f9f9f9;
+    text-shadow: 0px 0.5px #666464
 }
 
 .signup {
-    background-color: white;
-    color: black;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    color: #000000;
+    text-shadow: 0px 0.5px #b3b3b3;
 }
+
+.login:hover {
+    transition: all 0.05s ease-in-out;
+    transform: scale(1.05);
+    border-color: whitesmoke
+}
+
+.signup:hover {
+    transition: all 0.05s ease-in-out;
+    transform: scale(1.05);
+}
+
+.login:active {
+    transition: all 0.01s ease-in-out;
+    transform: scale(1.0);
+    border-color: whitesmoke
+}
+
+.signup:active {
+    transition: all 0.01s ease-in-out;
+    transform: scale(1.0);
+}
+

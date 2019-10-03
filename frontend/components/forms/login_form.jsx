@@ -8,13 +8,25 @@ class LoginForm extends React.Component {
             username: "",
             password: ""
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.guestLogin = this.guestLogin.bind(this);
     }
 
     handleSubmit (e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user);
+        this.props.closeModal();
+    }
+
+    guestLogin (e) {
+        e.preventDefault();
+        const guest = {
+                username: 'guest_user',
+                password: 'password'
+            }
+        this.props.login(guest);
+        this.props.closeModal();
     }
 
     update (field) {
@@ -27,14 +39,18 @@ class LoginForm extends React.Component {
     render () {
         return (
             <>
-            <form onSubmit={this.handleSubmit} class="session-form">
-                <h3>To continue, log in to Listener.</h3>
+            <form onSubmit={this.handleSubmit} className="session-form">
+                <div className="modal-logo">
+                <img src={window.logo} className="modal-logo-img" />
+                </div>
+                <button className="guest-button" onClick={this.guestLogin}>ENTER AS GUEST</button>
+                    <div className="or-block"><hr></hr><span className="or">OR</span><hr></hr></div>
                 <label>
                     <input type="text" 
                         value={this.state.username}
                         onChange={this.update('username')}
                         placeholder="Username"
-                        class="form-input"
+                        className="form-input"
                     />
                 </label>
                 <label>
@@ -42,12 +58,13 @@ class LoginForm extends React.Component {
                         value={this.state.password}
                         onChange={this.update('password')}
                         placeholder="Password"
-                        class="form-input"
+                        className="form-input"
                     />
                 </label>   
+                {/* <button type="submit" value="LOG IN" className="session-submit" >LOG IN</button> */}
                 <input type="submit" value="LOG IN" className="session-submit" /> 
-                <h3>Don't have an account?</h3>
-                <Link to="/signup">SIGN UP FOR LISTENER</Link>
+                {/* <Link to="/signup" className="session-flip">SIGN UP</Link> */}
+                    <Link to="/" className="session-flip" onClick={() => this.props.openModal('signup')}>SIGN UP</Link>
             </form>
             </>
         )
