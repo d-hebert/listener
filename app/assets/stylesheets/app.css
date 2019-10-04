@@ -1,5 +1,6 @@
 body {
     display: block;
+    background: black;
      color: white;
      font-family: 'Cabin', sans-serif;
      margin: 0;
@@ -11,9 +12,20 @@ body {
  }
 
  .background {
-     position: absolute;
+     /* position: absolute; */
+     min-height: 100%;
+    min-width: 100%;
+	
+    /* Set up proportionate scaling */
+     width: 100%;
+    height: auto;
+	
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
      z-index: -1;   
-     height: 100%;
+     min-height: 100%;
      width: 100%;
      filter: grayscale(0.2) blur(0.8px) brightness(30%);
  }
@@ -116,107 +128,4 @@ input[type="text"]:active,
     font-size: 27px;
     left: 180px;
     top: 38px;
- }
-
-.session-form {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     height: 500px;
-     background: rgba(0, 0, 0, 0);
-     /* opacity: 0; */
-     margin: 0 auto;
-     /* width: 340px; */
- }
-
- .session-submit {
-    border: 0;
-    color: white;
-    background-color: #f59b23;
-    border-radius: 15px;
-    width: 30%;
-    height: 33px;
-    text-align: center;
-    text-decoration: none;
-    margin: 10px;
-    margin-top: 20px;
-    font-size: 11px;   
-    letter-spacing: 2px;
-    text-shadow: 0.5px 0.5px rgb(46, 46, 46);
-}
-
-.session-submit:hover {
-    transition: all 0.05s ease-in-out;
-    transform: scale(1.05);
-    background-color: #f7b234;
-}
-
-.guest-button {
-    border: 0;
-    color: white;
-    background-color: #3b5997;
-    border-radius: 15px;
-    width: 97.5%;
-    height: 33px;
-    text-align: center;
-    text-decoration: none;
-    margin: 10px;
-    font-size: 11px;   
-    letter-spacing: 2px;
-    text-shadow: 0.5px 0.5px rgb(173, 173, 173);
-}
-
-.guest-button:hover {
-    transition: all 0.05s ease-in-out;
-    transform: scale(1.05);
-    background-color: #5c88db;
-}
-
-.form-input {
-    padding-left: 8px;
-    width: 340px;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    width: 150px;
-    border: 0;
-    border-top: 1px solid #585656;
-    margin: 1em 0;
-    padding: 0;
-}
-
-.or-block {
-    display: flex;
-}
-
-.or {
-    color: #b3b3b3;
-    letter-spacing: 4px;
-    font-size: 11px;
-    margin: 10px;
-    margin-left: 13px;
-}
-
-.session-flip {
-    color: whitesmoke;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    bottom: -150%;
-    border-top: 1px solid rgba(0, 0, 0, 0);
-}
-
-.session-flip:hover {
-    /* text-decoration: underline;
-    text-decoration-line: 5px; */
-    transition: all 0;
-    border-top: none;
-    border-bottom: 1px solid whitesmoke;
-}
-
- a {
-    color: white;
  }

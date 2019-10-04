@@ -10,7 +10,7 @@ import Modal from './modal';
 const App = () => {
     return (
         <div className="app" >
-            <header>
+            <nav className="nav-left">
                 <h2 className="logo-text">
                     <span className="l1">L</span>
                     <span className="l2">i</span>
@@ -19,7 +19,7 @@ const App = () => {
                 </h2>
                 <SiteNav />
                 <UserNavContainer />
-            </header>
+            </nav>
             <img src={window.redbg} className="background" />
             <Modal />
             {/* <AuthRoute path="/login" component={LoginFormContainer} />
