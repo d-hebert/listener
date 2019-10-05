@@ -17,7 +17,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
-        this.props.closeModal();
+        // this.props.closeModal();
     }
 
     guestLogin(e) {
@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
             password: 'password'
         }
         this.props.login(guest);
-        this.props.closeModal();
+        // this.props.closeModal();
     }
 
     update(field) {
@@ -35,6 +35,14 @@ class LoginForm extends React.Component {
             [field]: e.currentTarget.value
         })
         )
+    }
+
+    handleErrors(num) {
+        if (this.props.errors.length === 0) {
+            return < div className="errors-blank" ></div >
+        } else {
+            return < div className="error-blank" > {this.props.errors[num]}</div >
+        }
     }
 
     render() {
@@ -54,6 +62,7 @@ class LoginForm extends React.Component {
                             className="form-input"
                         />
                     </label>
+                    <div className="errors-blank su">{this.props.errors[0]}</div>
                     <label>
                         <input type="text"
                             value={this.state.email}
@@ -62,6 +71,7 @@ class LoginForm extends React.Component {
                             className="form-input"
                         />
                     </label>
+                    <div className="errors-blank su">{this.props.errors[1]}</div>
                     <label>
                         <input type="password"
                             value={this.state.password}
@@ -70,6 +80,7 @@ class LoginForm extends React.Component {
                             className="form-input"
                         />
                     </label>
+                    <div className="errors-blank su">{this.props.errors[2]}</div>
                     <input type="submit" value="SIGN UP" className="session-submit" />
                     {/* <Link to="/login" className="session-flip">LOG IN</Link> */}
                     <Link to="/" className="session-flip" onClick={() => this.props.openModal('login')}>LOG IN</Link>

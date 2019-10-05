@@ -1,0 +1,51 @@
+/* audio::-webkit-media-controls-panel
+audio::-webkit-media-controls-mute-button
+audio::-webkit-media-controls-play-button
+audio::-webkit-media-controls-timeline-container
+audio::-webkit-media-controls-current-time-display
+audio::-webkit-media-controls-time-remaining-display
+audio::-webkit-media-controls-timeline
+audio::-webkit-media-controls-volume-slider-container
+audio::-webkit-media-controls-volume-slider
+audio::-webkit-media-controls-seek-back-button
+audio::-webkit-media-controls-seek-forward-button
+audio::-webkit-media-controls-fullscreen-button
+audio::-webkit-media-controls-rewind-button
+audio::-webkit-media-controls-return-to-realtime-button
+audio::-webkit-media-controls-toggle-closed-captions-button */
+
+.audio-player {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background-color: #292929;
+    margin-bottom: 0;
+    height: 90px;
+    min-width: 100%
+}
+
+.player-buttons {
+    border: none;
+    background: none;
+    color: whitesmoke;
+    /* width: 180px;
+    height: 22px;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+    font-size: 11px;   
+    font-weight: bold;
+    padding-top: 7px;
+    letter-spacing: 2px; */
+}
+
+.play-pause {
+    font-size: 36px;
+
+}
+
+.material-icons { 
+    font-size: 36px; 
+}

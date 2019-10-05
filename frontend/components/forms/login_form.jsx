@@ -6,7 +6,8 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            errors: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.guestLogin = this.guestLogin.bind(this);
@@ -15,8 +16,10 @@ class LoginForm extends React.Component {
     handleSubmit (e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.login(user);
-        this.props.closeModal();
+        this.props.login(user)
+        this.setState({errors: this.props.errors})
+
+        // this.props.closeModal();
     }
 
     guestLogin (e) {
@@ -34,6 +37,18 @@ class LoginForm extends React.Component {
             [field]: e.currentTarget.value
             })
         )
+    }
+
+    renderErrors () {
+        return (this.state.errors)
+    }
+
+    handleErrors () {
+        if (this.props.errors.length === 0) {
+            return < div className="errors-blank" > {this.props.errors}</div >
+        } else {
+            return < div className="errors" > {this.props.errors}</div >
+        }
     }
 
     render () {
@@ -61,6 +76,7 @@ class LoginForm extends React.Component {
                         className="form-input"
                     />
                 </label>   
+                {this.handleErrors()}
                 {/* <button type="submit" value="LOG IN" className="session-submit" >LOG IN</button> */}
                 <input type="submit" value="LOG IN" className="session-submit" /> 
                 {/* <Link to="/signup" className="session-flip">SIGN UP</Link> */}

@@ -9,9 +9,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <% if track_loaded? %>
+    <script type="text/javascript">
+        window.trackUrl = (
+            "<%= url_for(current_track.file) %>");
+    </script>
+<% else %>
+    <script type="text/javascript">
+        window.trackUrl = null
+    </script>
+<% end %>
     <div class="logo-img">
       <%= image_tag("logos/logo.png") %>
     </div>

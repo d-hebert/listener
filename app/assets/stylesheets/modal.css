@@ -142,3 +142,48 @@ hr {
  a {
     color: white;
  }
+
+ .errors {
+    color: white;
+    padding-left: 8px;
+    width: 342px;
+    background: rgb(190, 48, 50);
+    height: 25px;
+    text-align: center;
+    padding-top: 5px;
+    border:0.75px solid black;
+    margin-top: 5px;
+    border-radius: 2px;
+    font-size: 14px;   
+    letter-spacing: 1px;
+    text-shadow: 0.15px 0.15px rgb(173, 173, 173);
+    font-weight: lighter;
+}
+
+.errors-blank {
+    padding-left: 8px;
+    width: 342px;
+    background: none;
+    height: 25px;
+    text-align: center;
+    padding-top: 5px;
+    border: 0.75px solid transparent;
+    margin-top: 5px;
+    border-radius: 2px;
+    font-size: 14px;   
+    letter-spacing: 1px;
+    text-shadow: 0.15px 0.15px rgb(173, 173, 173);
+    font-weight: lighter;
+}
+
+.su {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+    height: 10px;
+}
+
+.error-form {
+    
+}

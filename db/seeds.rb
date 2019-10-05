@@ -11,3 +11,7 @@ User.destroy_all
 guest = User.create!(username: 'guest_user', email: 'guest@listener.com', password: 'password')
 
 user1 = User.create!(username: 'dhebert', email: 'd.hebert@live.com', password: 'password')
+
+
+test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)
+test_track.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/ngnb.mp3"), filename: "ngnb.mp3")
