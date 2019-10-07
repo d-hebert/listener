@@ -5,6 +5,7 @@ import { renderErrors } from '../util/errors_util'
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
+export const RECEIVE_CURRENT_TRACK = 'CURRENT_CURRENT_TRACK'
 
 import { closeModal } from '../actions/modal_actions';
 
@@ -36,6 +37,13 @@ export const clearErrors = () => {
     }
 }
 
+export const receiveCurrentTrack = (track) => {
+    return {
+        type: RECEIVE_CURRENT_TRACK,
+        track: track
+    }
+}
+
 
 
 export const login = (user) => (dispatch) => {
@@ -52,8 +60,13 @@ export const logout = () => (dispatch) => {
 
 export const signup = (user) => (dispatch) => {
     return APIUtil.signup(user)
-        .then(user => dispatch(receiveCurrentUser(user)))
-        .then(() => closeModal())
-        .then(() => dispatch(clearErrors()))
+        .then( user => dispatch(receiveCurrentUser(user)))
+        .then( () => closeModal() )
+        .then( () => dispatch(clearErrors()) )
         .fail(response => dispatch(receiveErrors(response.responseJSON)))
+}
+
+export const load = (track) => (dispatch) => {
+    return APIUtil.load(track)
+        .then(track => dispatch(receiveCurrentTrack(track)))
 }

@@ -17,6 +17,20 @@
         "<%= asset_path("backgrounds/backgroundreddish.svg") %>") 
 </script>
 
+<% if track_loaded? %>
+    <script type="text/javascript">
+        window.trackUrl = (
+            "<%= url_for(current_track.file) %>");
+        window.trackId = <%= current_track.id %>
+    </script>
+<% else %>
+    <script type="text/javascript">
+        window.trackUrl = null
+    </script>
+<% end %>
+    <div class="logo-img">
+      <%= image_tag("logos/logo.png") %>
+    </div>
 
 
 <main id="root">

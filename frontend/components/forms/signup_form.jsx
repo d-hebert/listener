@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
             password: 'password'
         }
         this.props.login(guest);
-        // this.props.closeModal();
+        this.props.closeModal();
     }
 
     update(field) {

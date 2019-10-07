@@ -1,19 +1,21 @@
 import { connect } from 'react-redux'
 import AudioPlayer from './audio_player'
+import { load } from '../../actions/session_actions'
 
 const msp = (state) => {
-    // might need to use ownProps for styling dets
-    const trackUrl = window.trackUrl;
-    // will need to flesh this out...
+    const trackUrl = state.ui.currentTrack.url;
+    const trackId = state.ui.currentTrack.id;
     return {
+        trackId,
         trackUrl
+    }
+
+}
+
+const mdp = (dispatch) => {
+    return {
+        load: (track) => dispatch(load(track))
     }
 }
 
-// const mdp = (dispatch) => {
-//     return {
-        
-//     }
-// }
-
-export default connect(msp, null)(AudioPlayer);
+export default connect(msp, mdp)(AudioPlayer);

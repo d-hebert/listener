@@ -10,22 +10,15 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+      src="https://use.fontawesome.com/releases/v5.11.2/js/all.js"
+      data-auto-a11y="true"
+    ></script>
+  
   </head>
 
   <body>
-    <% if track_loaded? %>
-    <script type="text/javascript">
-        window.trackUrl = (
-            "<%= url_for(current_track.file) %>");
-    </script>
-<% else %>
-    <script type="text/javascript">
-        window.trackUrl = null
-    </script>
-<% end %>
-    <div class="logo-img">
-      <%= image_tag("logos/logo.png") %>
-    </div>
     <%= yield %>
   </body>
 </html>

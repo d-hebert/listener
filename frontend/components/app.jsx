@@ -6,6 +6,7 @@ import SiteNav from './left_nav/site_nav';
 import LoginFormContainer from './forms/login_form_container';
 import SignupFormContainer from './forms/signup_form_container';
 import AudioPlayerContainer from './audio/audio_player_container';
+import NowPlaying from './audio/now_playing_container';
 import Modal from './modal';
 
 const App = () => {
@@ -21,12 +22,10 @@ const App = () => {
                 <SiteNav />
                 <UserNavContainer />
             </nav>
-            <audio hidden controls className="html5-player" src={window.trackUrl}> </audio>
             <AudioPlayerContainer />
+            {/* <NowPlaying /> */}
             <img src={window.redbg} className="background" />
             <Modal />
-            {/* <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} /> */}
         </div>
     )
 }

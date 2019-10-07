@@ -26,3 +26,11 @@ export const logout = () => {
     url: '/api/session',
   })
 }
+
+export const load = (track) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/tracks',
+    data: track 
+  })
+}

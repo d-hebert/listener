@@ -1,4 +1,9 @@
+html {
+    min-width: 800px;
+}
+
 body {
+    min-width: 800px;
     display: block;
     background: black;
      color: white;

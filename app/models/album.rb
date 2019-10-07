@@ -1,20 +1,20 @@
 # == Schema Information
 #
-# Table name: tracks
+# Table name: albums
 #
 #  id         :bigint           not null, primary key
 #  title      :string           not null
-#  album_id   :integer          not null
 #  artist_id  :integer          not null
+#  track_ids  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Track < ApplicationRecord
-    validates :title, :album_id, :artist_id, presence: true
+class Album < ApplicationRecord
+    validates :title, :artist_id, presence: true
 
-    has_one_attached :file
+    has_one_attached :cover_art
 
     belongs_to :artist
-    belongs_to :album
+    has_many :tracks
 end

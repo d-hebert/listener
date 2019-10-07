@@ -1,20 +1,19 @@
 # == Schema Information
 #
-# Table name: tracks
+# Table name: albums
 #
 #  id         :bigint           not null, primary key
 #  title      :string           not null
-#  album_id   :integer          not null
 #  artist_id  :integer          not null
+#  track_ids  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Track < ApplicationRecord
-    validates :title, :album_id, :artist_id, presence: true
+require 'test_helper'
 
-    has_one_attached :file
-
-    belongs_to :artist
-    belongs_to :album
+class AlbumTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
