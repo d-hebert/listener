@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 Artist.destroy_all
 Album.destroy_all
@@ -19,7 +21,8 @@ Artist.create!(name: 'Alfa Mist')
 
 Album.create!(title: 'tests', artist_id: 1)
 a = Album.create!(title: "Antiphon", artist_id: 2)
-a.cover_art.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/front.jpg"), filename: "front.jpg")
+fa = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/front.jpg')
+a.cover_art.attach(io: fa, filename: "front.jpg")
 
 
 test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)
@@ -29,19 +32,34 @@ test_track.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/
 
 
 t1 = Track.create!(title: 'Keep On', album_id: 2, artist_id: 2)
-t1.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/keepon.mp3"), filename: "keepon.mp3")
+f1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/keepon.mp3')
+t1.file.attach(io: f1, filename: "keepon.mp3")
+
 t2 = Track.create!(title: 'Potential', album_id: 2, artist_id: 2)
-t2.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/potential.mp3"), filename: "potential.mp3")
+f2 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/potential.mp3')
+t2.file.attach(io: f2, filename: "potential.mp3")
+
 t3 = Track.create!(title: 'Errors', album_id: 2, artist_id: 2)
-t3.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/errors.mp3"), filename: "errors.mp3")
+f3 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/errors.mp3')
+t3.file.attach(io: f3, filename: "errors.mp3")
+
 t4 = Track.create!(title: 'Breathe', album_id: 2, artist_id: 2)
-t4.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/breathe.mp3"), filename: "breathe.mp3")
+f4 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/breathe.mp3')
+t4.file.attach(io: f4, filename: "breathe.mp3")
+
 t5 = Track.create!(title: '7th October', album_id: 2, artist_id: 2)
-t5.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/october.mp3"), filename: "october.mp3")
+f5 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/october.mp3')
+t5.file.attach(io: f5, filename: "october.mp3")
+
 t6 = Track.create!(title: 'Kyoki', album_id: 2, artist_id: 2)
-t6.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/kyoki.mp3"), filename: "kyoki.mp3")
+f6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/kyoki.mp3')
+t6.file.attach(io: f6, filename: "kyoki.mp3")
+
 t7 = Track.create!(title: 'Nucleus', album_id: 2, artist_id: 2)
-t7.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/nucleus.mp3"), filename: "nucleus.mp3")
+f7 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/nucleus.mp3')
+t7.file.attach(io: f7, filename: "nucleus.mp3")
+
 t8 = Track.create!(title: 'Brian', album_id: 2, artist_id: 2)
-t8.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/alfamist/brian.mp3"), filename: "brian.mp3")
+f8 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/brian.mp3')
+t8.file.attach(io: f8, filename: "brian.mp3")
 
