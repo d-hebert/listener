@@ -26,7 +26,8 @@ a.cover_art.attach(io: fa, filename: "front.jpg")
 
 
 test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)
-test_track.file.attach(io: File.open("/Users/davidhebert/Documents/listener-dev/ngnb.mp3"), filename: "ngnb.mp3")
+test_audio = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/ngnb.mp3')
+test_track.file.attach(io: test_audio, filename: "ngnb.mp3")
 
 # Alfa Mist, artist 2 //////////////
 
