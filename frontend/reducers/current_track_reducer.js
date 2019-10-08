@@ -7,7 +7,8 @@ const initialState = {
     id: 7,
     title: "Kyoki",
     cover_art: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34c9b548e640ba89d2d42232392c5c339a599481/front.jpg",
-    url: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b7bfbb6ac6b6cec082dd184039dc822fe33631c5/kyoki.mp3"
+    url: "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dd117456f54d0413fdceb3f790d55a5a6d2480d7/kyoki.mp3"
+
 }
 
 const currentTrackReducer = (state = initialState, action) => {

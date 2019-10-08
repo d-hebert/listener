@@ -10,7 +10,9 @@ class AudioPlayer extends React.Component {
             totalTime: '0:00',
             playing: false,
             trackId: this.props.trackId,
-            trackUrl: this.props.trackUrl
+            trackUrl: this.props.trackUrl,
+            volume: 65,
+            muted: false
         }
     }
 
@@ -28,6 +30,7 @@ class AudioPlayer extends React.Component {
         this.currentTime = this.audio.currentTime;
         this.trackLength = trackLength
         this.timer = null;
+        this.volume = document.getElementsByClassName("volume-bar")[0];
     }
 
     handleClick(action) {
@@ -132,6 +135,51 @@ class AudioPlayer extends React.Component {
         )
     }
 
+    handleVolume (e) {
+        let level = (e.currentTarget.value/100).toFixed(2)
+        this.audio.volume = level
+    }
+
+    volumeSlider () {
+        return (
+            <input type="range"
+                className="volume-bar"
+                id="volume"
+                min="0"
+                max="100"
+                defaultValue={this.state.volume}
+                onChange={(e) => this.handleVolume(e)} />
+        )
+    }
+
+    mute () {
+        if (this.state.muted === true) {
+            this.volume.value = 65;
+            this.audio.muted = false; 
+            this.setState({ muted: false })
+        } else {
+            this.volume.value = 0;
+            this.audio.muted = true; 
+            this.setState({ muted: true })
+        }
+    }
+
+    muteButton () {
+            // if (this.state.muted === true) {
+                return (
+                    <button className="player-buttons mute-button" onClick={() => this.mute()}>
+                        <i className="fas fa-volume-mute"></i>
+                    </button>
+                )
+            // } else {
+            //     return (
+            //         <button className="player-buttons mute-button" onClick={() => this.mute()}>
+            //             <i className="fas fa-volume-up"></i>
+            //         </button>
+            //     )
+            // }
+    }
+
     render () {
         return (
             <div className="audio-player">
@@ -145,7 +193,10 @@ class AudioPlayer extends React.Component {
                     {this.playPause()}
                     {this.skipButton('forward')}
                 </div>
-                <div className="audio-player-right"></div>
+                <div className="audio-player-right">
+                    {this.muteButton()}
+                    {this.volumeSlider()}
+                </div>
             </div>
         )
     }
