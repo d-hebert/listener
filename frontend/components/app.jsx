@@ -8,6 +8,7 @@ import SignupFormContainer from './forms/signup_form_container';
 import AudioPlayerContainer from './audio/audio_player_container';
 import NowPlaying from './audio/now_playing_container';
 import Modal from './modal';
+import HomeIndex from './home/home_index_container'
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
             <AudioPlayerContainer />
             {/* <NowPlaying /> */}
             <img src={window.redbg} className="background" />
+            <Route exact path="/browse" component={HomeIndex} />
             <Modal />
         </div>
     )

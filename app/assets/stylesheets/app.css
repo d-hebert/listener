@@ -6,33 +6,28 @@ body {
     min-width: 800px;
     display: block;
     background: black;
-     color: white;
-     font-family: 'Cabin', sans-serif;
-     margin: 0;
-     padding: 0;
-     border: 0;
-     height: 100vh;
-     position: relative;
-     z-index: 2;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
  }
 
  .background {
-     /* position: absolute; */
-     min-height: 100%;
+    min-height: 100%;
     min-width: 100%;
-	
-    /* Set up proportionate scaling */
      width: 100%;
     height: auto;
-	
-    /* Set up positioning */
     position: fixed;
     top: 0;
     left: 0;
-     z-index: -1;   
-     min-height: 100%;
-     width: 100%;
-     filter: grayscale(0.2) blur(0.8px) brightness(30%);
+    z-index: -1;   
+    min-height: 100%;
+    width: 100%;
+    filter: grayscale(0.7) blur(0.8px) brightness(30%);
  }
 
  button:focus {

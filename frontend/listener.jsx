@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root'
+import { load } from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
       store = configureStore();
   }
+    store.dispatch(load({ id: 5 }));
 
   // testing begin
   window.getState = store.getState;

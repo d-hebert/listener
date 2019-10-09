@@ -17,4 +17,16 @@ class Album < ApplicationRecord
 
     belongs_to :artist
     has_many :tracks
+
+    def track_ids
+        ids = [] 
+        self.tracks.each do |track|
+            ids << track.id
+        end
+        return ids
+    end
+
+    def artist_name
+        return self.artist.name
+    end
 end

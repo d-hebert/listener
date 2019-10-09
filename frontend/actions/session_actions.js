@@ -5,7 +5,7 @@ import { renderErrors } from '../util/errors_util'
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
-export const RECEIVE_CURRENT_TRACK = 'CURRENT_CURRENT_TRACK'
+export const RECEIVE_CURRENT_TRACK = 'RECEIVE_CURRENT_TRACK'
 
 import { closeModal } from '../actions/modal_actions';
 

@@ -34,3 +34,11 @@ export const load = (track) => {
     data: track 
   })
 }
+
+export const getAlbum = (album) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/albums',
+    data: album
+  })
+}

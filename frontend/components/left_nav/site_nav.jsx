@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, Route } from 'react-router-dom';
+import HomeIndex from '../home/home_index_container'
 
 class SiteNav extends React.Component { 
     constructor (props) {
@@ -9,7 +10,7 @@ class SiteNav extends React.Component {
     render () {
         return (
         <div className="site-nav">
-            <Link to="/" className="site-nav-link" >Home</Link>
+            <NavLink exact to="/browse" className="site-nav-link" >Home</NavLink>
         </div>
         )
     }

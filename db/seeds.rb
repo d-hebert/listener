@@ -19,10 +19,13 @@ guest = User.create!(username: 'guest_user', email: 'guest@listener.com', passwo
 Artist.create!(name: 'd. hebert')
 Artist.create!(name: 'Alfa Mist')
 
-Album.create!(title: 'tests', artist_id: 1)
-a = Album.create!(title: "Antiphon", artist_id: 2)
-fa = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/front.jpg')
-a.cover_art.attach(io: fa, filename: "front.jpg")
+a1 = Album.create!(title: 'tests', artist_id: 1)
+fa1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/catcher.jpg')
+a1.cover_art.attach(io: fa1, filename: "catcher.jpg")
+
+a2 = Album.create!(title: "Antiphon", artist_id: 2)
+fa2 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/front.jpg')
+a2.cover_art.attach(io: fa2, filename: "front.jpg")
 
 
 test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)

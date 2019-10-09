@@ -9,11 +9,15 @@ class AudioPlayer extends React.Component {
             elapsedTime: '0:00',
             totalTime: '0:00',
             playing: false,
-            trackId: this.props.trackId,
+            trackId: undefined,
             trackUrl: this.props.trackUrl,
             volume: 65,
             muted: false
         }
+    }
+
+    componentWIllMount () {
+        debugger
     }
 
     componentDidMount () {
