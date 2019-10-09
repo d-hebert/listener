@@ -19,21 +19,17 @@ class HomeIndex extends React.Component {
     }
 
     formatAlbums () {
-        let albums = this.props.albums
+        // let albums = this.props.albums
+        debugger
         return ( 
-            <DisplayBlock key={albums} props={albums} /> 
+            <DisplayBlock key={1} props={this.props.albums} /> 
         )
     }
 
     formatPlaylists() {
-        // /////////playlists not yet implemented:
-        // return (
-        //     this.props.playlists.map(playlist =>
-        //         <DisplayBlock key={playlist.id} props={playlist} />
-        //     )
-        // )
         return (
-            <DisplayBlock />
+            // <DisplayBlock key={2} props={this.props.playlists} />
+                <DisplayBlock />
         )
     }
 
@@ -48,14 +44,14 @@ class HomeIndex extends React.Component {
         } else {
             return (
                 <div className="index-main">
-                        <h2>Albums</h2>
-                    <div className="index-part index-albums">
-                            {this.formatAlbums()}
-                    </div>
-                        <h2>Playlists</h2>
-                    <div className="index-part index-playlists">
-                            {this.formatPlaylists()}
-                    </div>
+                    <h2 className="home-header">Albums</h2>
+                        <div className="index-part index-albums">
+                                {this.formatAlbums()}
+                        </div>
+                    <h2 className="home-header">Playlists</h2>
+                        <div className="index-part index-playlists">
+                                {this.formatPlaylists()}
+                        </div>
                 </div>
             )
         }

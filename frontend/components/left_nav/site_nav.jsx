@@ -10,7 +10,14 @@ class SiteNav extends React.Component {
     render () {
         return (
         <div className="site-nav">
-            <NavLink exact to="/browse" className="site-nav-link" >Home</NavLink>
+            <NavLink exact to="/browse" className="site-nav-link" >
+                    <span className="nav-icons"><i className="material-icons nav-icons">home</i></span>
+                    <span className="nav-text">Home</span>
+            </NavLink>
+            <NavLink exact to="/search" className="site-nav-link" >
+                    <span className="nav-icons"><i className="material-icons nav-icons">search</i></span>
+                    <span className="nav-text">Search</span>
+            </NavLink>
         </div>
         )
     }

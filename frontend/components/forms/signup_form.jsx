@@ -7,7 +7,8 @@ class LoginForm extends React.Component {
         this.state = {
             username: "",
             password: "",
-            email: ""
+            email: "",
+            errors: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.guestLogin = this.guestLogin.bind(this);
@@ -18,6 +19,7 @@ class LoginForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.signup(user);
         // this.props.closeModal();
+        this.setState({ errors: this.props.errors })
     }
 
     guestLogin(e) {

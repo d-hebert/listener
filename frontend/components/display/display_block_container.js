@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import DisplayBlock from './display_block'
 import { prepareQueue } from '../../actions/queue_actions'
+import { load } from '../../actions/session_actions'
 
 const msp = (state, ownProps) => {
     return {
@@ -10,7 +11,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
     return {
-        prepareQueue: (track_ids) => dispatch(prepareQueue(track_ids))
+        prepareQueue: (track_ids) => dispatch(prepareQueue(track_ids)),
+        load: (track) => dispatch(load(track))
     }
 }
 

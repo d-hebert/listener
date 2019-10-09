@@ -15,15 +15,18 @@ audio::-webkit-media-controls-return-to-realtime-button
 audio::-webkit-media-controls-toggle-closed-captions-button */
 
 .audio-player {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0px;
+    right: 0px;
     background-color: #292929;
     margin-bottom: 0;
     height: 90px;
     min-width: 100%;
+    width: 100%;
     color: #b3b3b3;
     flex-wrap: wrap;
 }

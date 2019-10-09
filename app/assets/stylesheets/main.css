@@ -2,12 +2,12 @@
     background: none;
     /* background-color: rgba(67, 67, 67, 0.365); */
     width: 100%;
-    margin-left: 230px;
+    margin-left: 220px;
     z-index: -1;
     min-height: 100%;
     min-width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;  
     min-height: 100%;
@@ -15,7 +15,8 @@
 }
 
 .index-main {
-    margin-left: 30px;
+    position: absolute;
+    margin-left: 220px;
     margin-right: 0px;
     width: 150vh;
     display: flex;
@@ -48,24 +49,63 @@
 
 .display-block-image-item {
     margin: 10px;
-    height: 200px;
-    width: 200px;
+    height: 215px;
+    width: 215px;
     background: black;
-    border: 1px solid rgb(68, 68, 68);
+    padding: none;
+}
+
+.display-block-image-item:hover {
+    transition: all 0.2s ease-in-out;   
+    background: none !important;
+    background-image: none !important;
+    border: none !important;
 }
 
 .display-block-image-item-blank {
     margin: 10px;
-    height: 200px;
-    width: 200px;
+    height: 215px;
+    width: 215px;
     background: black;
     border: 0.25px solid rgb(68, 68, 68);
+    position: relative;
 }
 
 .button-hider {
-    /* display: none; */
-    border: none;
+    opacity: 0;
+    height: 215px;
+    width: 215px;
+    border: 0;
     background: none;
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    text-align: center;
+    color: whitesmoke;
 }
+
+.button-hider:hover {
+    /* transition: all 0.2s ease-in-out; */
+    opacity: 1;
+    color: whitesmoke;
+    background: rgba(44, 44, 44, 0.5);
+    filter: grayscale(0.3) blur(0.3px) brightness(90%);
+}
+
+.button-hider:active {
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    transform: scale(0.95);
+    color: whitesmoke;
+    background: rgba(44, 44, 44, 0.5);
+}
+
+.home-header {
+    padding-left: 54px;
+    font-size: 35px;
+}
+
+.index-play {
+    font-size: 80px !important;
+}
+

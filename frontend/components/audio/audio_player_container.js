@@ -5,9 +5,11 @@ import { load } from '../../actions/session_actions'
 const msp = (state) => {
     const trackUrl = state.ui.currentTrack.url;
     const trackId = state.ui.currentTrack.id;
+    const queue = state.ui.queue
     return {
         trackId,
-        trackUrl
+        trackUrl,
+        queue
     }
 }
 

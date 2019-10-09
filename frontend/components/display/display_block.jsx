@@ -3,26 +3,56 @@ import React from 'react';
 class DisplayBlock extends React.Component {
     constructor (props) {
         super (props)
+        debugger
     }
 
     title () {
         <h1></h1>
     }
 
-    images () {
+    handleClick (index) {
+        this.props.prepareQueue(this.props.content[index].track_ids);
+        this.props.load({id: (this.props.content[index].track_ids[0])})
+    }
+
+    imageItem (index) {
         debugger
+        return (
+            <li className="display-block-image-item"
+                style={{
+                    backgroundImage: `url(${this.props.content[index].cover_art})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }}>
+                <button
+                    className="button-hider"
+                    onClick={() => this.handleClick(index)}
+                    style={{
+                        backgroundImage: `url(${this.props.content[index].cover_art})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat'
+                    }}>
+                    <i className="material-icons md-48 index-play">play_circle_outline</i>
+                </button>
+            </li>
+        )
+    }
+
+    blankItem () {
+        return (
+            <li className="display-block-image-item-blank"></li>
+        )
+    }
+
+    images () {
         if (this.props.content !== undefined && this.props.content.length > 0) {
             return (
                 <ul className="display-block-image-container">
-                    <li className="display-block-image-item"><img src={this.props.content[0].cover_art} /></li>
-                    <li className="display-block-image-item">
-                        <button
-                            className="button-hider"
-                            onClick={() => this.props.prepareQueue(this.props.content[1].track_ids)}>
-                                <img src={this.props.content[1].cover_art} />
-                        </button>
-                    </li>
-                    <li className="display-block-image-item"></li>
+                    {this.imageItem(0)}
+                    {this.imageItem(1)}
+                    {this.imageItem(2)}
                     <li className="display-block-image-item"></li>
                     <li className="display-block-image-item"></li>
                     <li className="display-block-image-item"></li>
@@ -31,12 +61,12 @@ class DisplayBlock extends React.Component {
         } else {
             return (
                     <ul className="display-block-image-container">
-                        <li className="display-block-image-item-blank"></li>
-                        <li className="display-block-image-item-blank"></li>
-                        <li className="display-block-image-item-blank"></li>
-                        <li className="display-block-image-item-blank"></li>
-                        <li className="display-block-image-item-blank"></li>
-                        <li className="display-block-image-item-blank"></li>
+                        {this.blankItem()}
+                        {this.blankItem()}
+                        {this.blankItem()}
+                        {this.blankItem()}
+                        {this.blankItem()}
+                        {this.blankItem()}
                     </ul>
                 )
             }
@@ -44,6 +74,7 @@ class DisplayBlock extends React.Component {
     }
 
     render () {
+        debugger
         return (
             <div className="display-block">
                     {this.images()}

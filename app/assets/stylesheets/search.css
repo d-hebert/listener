@@ -1,0 +1,32 @@
+.search-container {
+    background: none;
+    color: whitesmoke;
+    /* background-color: rgba(67, 67, 67, 0.365); */
+    margin-left: 230px;
+    z-index: -1;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;  
+    min-height: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.search-bar {
+    width: 40% !important;
+    min-width: 300px !important;
+    height: 45px !important;
+    background: whitesmoke !important;
+    color: rgb(18, 18, 18) !important;
+    border-radius: 25px !important;
+    text-align: center;
+}
+
+.search-bar::placeholder {
+    color: grey !important;
+    text-align: center;
+}
+

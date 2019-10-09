@@ -12,7 +12,8 @@ class AudioPlayer extends React.Component {
             trackId: undefined,
             trackUrl: this.props.trackUrl,
             volume: 65,
-            muted: false
+            muted: false,
+            queue: this.props.queue
         }
     }
 
@@ -21,6 +22,10 @@ class AudioPlayer extends React.Component {
     }
 
     componentDidMount () {
+        if (this.state.queue.length > 0) {
+            debugger
+            this.props.load(this.state.queue[0])
+        }
         this.audio = document.getElementsByClassName("html5-player")[0]
         let trackLength;
         this.audio.addEventListener('loadedmetadata', function () {
@@ -68,21 +73,26 @@ class AudioPlayer extends React.Component {
     }
 
     skip(direction) {
-        let newId;
+        let newPos;
+        let pos = this.props.queue.indexOf(this.props.trackId)
+        let min = 0;
+        let max = this.props.queue.length - 1
         switch (direction) {
             case 'back':
                 this.audio.pause()
                 this.setState({ playing: false });
-                newId = (this.state.trackId - 1);
-                this.props.load({ id: newId });
-                this.setState({ trackId: newId });
+                newPos = (pos - 1);
+                if (newPos < min) {newPos = min}
+                this.props.load({ id: this.props.queue[newPos] });
+                this.setState({ trackId: this.props.queue[newPos] });
                 break;
             case 'forward':
                 this.audio.pause()
                 this.setState({ playing: false });
-                newId = (this.state.trackId + 1);
-                this.props.load({ id: newId });
-                this.setState({ trackId: newId });
+                newPos = (pos + 1);
+                if (newPos > max) { newPos = max }
+                this.props.load({ id: this.props.queue[newPos] });
+                this.setState({ trackId: this.props.queue[newPos] });
                 break;
             default:
                 break;
