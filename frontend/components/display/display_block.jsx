@@ -3,7 +3,6 @@ import React from 'react';
 class DisplayBlock extends React.Component {
     constructor (props) {
         super (props)
-        debugger
     }
 
     title () {
@@ -16,7 +15,6 @@ class DisplayBlock extends React.Component {
     }
 
     imageItem (index) {
-        debugger
         return (
             <li className="display-block-image-item"
                 style={{
@@ -53,9 +51,9 @@ class DisplayBlock extends React.Component {
                     {this.imageItem(0)}
                     {this.imageItem(1)}
                     {this.imageItem(2)}
-                    <li className="display-block-image-item"></li>
-                    <li className="display-block-image-item"></li>
-                    <li className="display-block-image-item"></li>
+                    {this.imageItem(3)}
+                    {this.imageItem(4)}
+                    {this.imageItem(5)}
                 </ul>
             )
         } else {
@@ -74,7 +72,6 @@ class DisplayBlock extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <div className="display-block">
                     {this.images()}

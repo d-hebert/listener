@@ -2,11 +2,20 @@ import React from 'react';
 
 class Search extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
 
         this.state = {
-            string: ""
+            string: "",
+            albums: []
         }
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount () {
+        debugger
+        // look for albums in props
+        // this.refs.searchBar.focus()
     }
 
     handleChange () {
@@ -23,7 +32,8 @@ class Search extends React.Component {
                     className="search-bar"
                     placeholder="Search for Artists, Albums, or Songs"
                     value={this.state.query}
-                    onChange={this.handleChange}              
+                    onChange={this.handleChange} 
+                    ref="searchBar"             
                 />
             </div>
         )

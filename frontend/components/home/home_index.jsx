@@ -7,20 +7,14 @@ import DisplayBlock from '../display/display_block_container'
 class HomeIndex extends React.Component {
     constructor (props) {
         super(props)
-        // this.state = {
-        //     albums: []
-        // }
     }
 
     componentDidMount () {
-        this.props.fetchAlbums()
-        // this.props.albums.map( album =>
-        //    this.state.albums.push(album) )
+        this.props.fetchAlbums();
+        this.props.fetchPlaylists();
     }
 
     formatAlbums () {
-        // let albums = this.props.albums
-        debugger
         return ( 
             <DisplayBlock key={1} props={this.props.albums} /> 
         )
@@ -28,8 +22,7 @@ class HomeIndex extends React.Component {
 
     formatPlaylists() {
         return (
-            // <DisplayBlock key={2} props={this.props.playlists} />
-                <DisplayBlock />
+                <DisplayBlock key={2} props={this.props.playlists}/>
         )
     }
 
@@ -40,7 +33,6 @@ class HomeIndex extends React.Component {
             return (
                 <LoadingFilter />
             )
-        debugger
         } else {
             return (
                 <div className="index-main">

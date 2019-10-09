@@ -11,5 +11,17 @@
 #
 
 class Playlist < ApplicationRecord
-    validates :title, :artist_id, :track_ids, presence: true
+    validates :title, :author_id, :track_ids, presence: true
+
+    has_one_attached :cover_art
+
+    belongs_to :author,
+    foreign_key: :author_id,
+    primary_key: :id,
+    class_name: :User
+
+    def author_name
+        return self.author.username
+    end
+
 end
