@@ -49,7 +49,7 @@ export const receiveCurrentTrack = (track) => {
 export const login = (user) => (dispatch) => {
     return APIUtil.login(user)
         .then( user => dispatch(receiveCurrentUser(user)))
-        .then( () => closeModal() )
+        .then( () => dispatch(closeModal()) )
         .then( () => dispatch(clearErrors()))
         .fail( response => dispatch(receiveErrors(response.responseJSON)))
 }
@@ -61,7 +61,7 @@ export const logout = () => (dispatch) => {
 export const signup = (user) => (dispatch) => {
     return APIUtil.signup(user)
         .then( user => dispatch(receiveCurrentUser(user)))
-        .then( () => closeModal() )
+        .then( dispatch(closeModal()) )
         .then( () => dispatch(clearErrors()) )
         .fail(response => dispatch(receiveErrors(response.responseJSON)))
 }

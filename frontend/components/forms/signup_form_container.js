@@ -19,7 +19,7 @@ const mdp = (dispatch) => {
         login: (user) => { dispatch(login(user)) },
         signup: (user) => { dispatch(signup(user)) },
         openModal: (formType) => dispatch(openModal(formType)),
-        closeModal: () => dispatch(closeModal()),
+        closeModal: () => { dispatch(closeModal()) },
         clearErrors: () => dispatch(clearErrors())
     }
 }
