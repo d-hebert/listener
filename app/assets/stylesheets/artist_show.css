@@ -1,0 +1,99 @@
+.artist-show {
+    transition: all 1s ease-in-out;
+    background: linear-gradient(180deg, rgb(61, 61, 61) 0%, rgb(17, 17, 17) 28%, #000000 90%);
+    /* background-color: rgba(67, 67, 67, 0.365); */
+    background-position: 'center';
+    background-size: 'cover';
+    width: 100%;
+    /* margin-left: 250px; */
+    z-index: -1;
+    min-height: 100%;
+    min-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0px;  
+    min-height: 100%;
+    width: 100%;
+}
+
+.artist-show-tag {
+    position: absolute;
+    left: 430px;
+    top: 45px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.artist-show-header {
+    position: absolute;
+    left: 430px;
+    top: 20px;
+    font-size: 80px;
+    letter-spacing: 2px;
+}
+
+.artist-image-container {
+    position: absolute;
+    left: 275px;
+    top: 50px;
+    height: 115px;
+    width: 115px;
+}
+
+.artist-image {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.artist-tracks-container {
+    position: absolute;
+    left: 275px;
+    top: 200px;
+    width: 700px;
+}
+
+.artist-tracks-list {
+    list-style: none;
+}
+
+.list-item {
+    border-bottom: 0.5px solid rgb(31, 31, 31);
+    padding: 8px;
+    padding-left: 20px;
+}
+
+.list-item:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: rgb(31, 31, 31);
+}
+
+.list-item:active {
+    transition: all 0.05s ease-in-out;
+    background-color: rgb(49, 49, 49);
+}
+
+.list-item:focus {
+    /* transition: all 0.05s ease-in-out; */
+    background-color: rgb(49, 49, 49);
+}
+
+.list-item:first-of-type {
+    border-top: 0.5px solid rgb(31, 31, 31);
+}
+
+.track-button {
+
+    color: whitesmoke;
+    background: none;
+    border: none;
+    height: 100%;
+    padding-right: 60%;
+    /* width: 100%; */
+    padding-left: 0;
+    vertical-align: left;
+    font-size: 13px;
+    letter-spacing: 0.25
+
+}

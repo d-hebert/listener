@@ -10,6 +10,7 @@ import NowPlaying from './audio/now_playing_container';
 import Modal from './modal';
 import HomeIndex from './home/home_index_container'
 import Search from './search/search_container'
+import ArtistShow from './artist/artist_show_container'
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
             <img src={window.redbg} className="background" />
             <Route exact path="/browse" component={HomeIndex} />
             <Route exact path="/search" component={Search} />
+            <Route exact path="/artist" component={ArtistShow}/>
             <Modal />
         </div>
     )

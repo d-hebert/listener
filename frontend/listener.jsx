@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
       store = configureStore();
   }
-    store.dispatch(load({ id: 1 }));
+    store.dispatch(load({ id: -1 }));
 
   // testing begin
   window.getState = store.getState;

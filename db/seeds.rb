@@ -8,20 +8,47 @@
 
 require 'open-uri'
 
+# dropping tables: /////////////////////////////////////////////////////////////
 User.destroy_all
 Artist.destroy_all
 Album.destroy_all
 Track.destroy_all
 
+# making users: ////////////////////////////////////////////////////////////////
+
 User.create!(username: 'dhebert', email: 'd.hebert@live.com', password: 'password')
 guest = User.create!(username: 'guest_user', email: 'guest@listener.com', password: 'password')
 
-Artist.create!(name: 'd. hebert')
-Artist.create!(name: 'Alfa Mist')
-Artist.create!(name: 'Introcut')
-Artist.create!(name: 'Poppies')
-Artist.create!(name: 'Doyeq')
-Artist.create!(name: 'Himmelsrandt')
+
+# making artists: //////////////////////////////////////////////////////////////
+
+
+a1 = Artist.create!(name: 'd. hebert')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/acrossthepatio.jpg')
+a1.image.attach(io: img, filename: 'acrossthepatio.jpg')
+
+a2 = Artist.create!(name: 'Alfa Mist')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/alfamist.jpg') 
+a2.image.attach(io: img, filename: 'alfamist.jpg')
+
+a3 = Artist.create!(name: 'Introcut')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/introcut.jpg') 
+a3.image.attach(io: img, filename: 'introcut.jpg')
+
+a4 = Artist.create!(name: 'Poppies')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/poppies.jpg')
+a4.image.attach(io: img, filename: 'poppies.jpg')
+
+a5 = Artist.create!(name: 'Doyeq')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/doyeq.jpg') 
+a5.image.attach(io: img, filename: 'doyeq.jpg')
+
+a6 = Artist.create!(name: 'Himmelsrandt')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/himmelsrandt.jpg') 
+a6.image.attach(io: img, filename: 'himmelsrandt.jpg')
+
+
+# making albums: ///////////////////////////////////////////////////////////////
 
 a1 = Album.create!(title: 'tests', artist_id: 1)
 fa1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png')
@@ -46,6 +73,13 @@ a5.cover_art.attach(io: fa5, filename: "cover.jpg")
 a6 = Album.create!(title: 'V A L E', artist_id: 6)
 fa6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/Himmelsrandt+-+V+A+L+E/cover.jpg')
 a6.cover_art.attach(io: fa6, filename: "cover.jpg")
+
+
+
+# making tracks: ///////////////////////////////////////////////////////////////
+
+
+
 
 test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)
 test_audio = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/ngnb.mp3')
