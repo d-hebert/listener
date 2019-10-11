@@ -10,7 +10,7 @@ by David Hebert
 <br>
 Live Application: https://listener-aa.herokuapp.com/#/
 
-**Listener** is a social music streaming platform cloned after Spotify, planned and executed in 10 days.
+**Listener** (a Spotify clone) is a social music streaming platform planned and executed in 10 days.
 It includes user authentication, playlist management, and a persistent audio player.
 
 <br>
