@@ -4,7 +4,6 @@ import { fetchArtist } from '../../actions/artist_actions'
 import { load } from '../../actions/session_actions'
 
 const msp = (state, ownProps) => { 
-    debugger
     const artistId = ownProps.location.artist_id
     const artist = state.entities.artists
     return {

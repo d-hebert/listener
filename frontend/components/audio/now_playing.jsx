@@ -19,7 +19,6 @@ formatTitle () {
 }
 
     render () {
-        // debugger
         return (
             <div className="now-playing">
                 <div className="cover-art">

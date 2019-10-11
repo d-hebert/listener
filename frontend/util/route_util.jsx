@@ -18,9 +18,13 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => {
 }
 
 const msp = state => {
-    return { loggedIn: Boolean(state.session.id) }
+    return { loggedIn: Boolean(state.entities.users.length > 0) }
 }
 
 export const AuthRoute = withRouter(
     connect(msp, null)(Auth)
 )
+
+export const loggedIn = () => {
+    return { loggedIn: Boolean(state.entities.users.length > 0) }
+}

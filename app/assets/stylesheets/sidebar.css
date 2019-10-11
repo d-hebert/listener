@@ -37,13 +37,20 @@
     width: 100%;
     height: 30px;
     margin: auto;
-    padding-top: 0px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     /* text-align: center; */
     padding-left: 20px; 
     text-decoration: none;
     border-left: 4px solid rgb(18, 18, 18);
     color: #b3b3b3;
     /* vertical-align: middle; */
+}
+
+.create-pl-link {
+    margin-top: 150px;
 }
 
 .site-nav-link:hover {
@@ -134,3 +141,82 @@
     transform: scale(1.0);
 }
 
+.user-playlist-list {
+    position: absolute;
+    bottom: 310px;
+    list-style: none;
+    color: #b3b3b3;
+    height: 300px;
+    overflow: auto;
+    width: 230px;
+    padding-left: 0px !important;
+    margin-left: 0 !important;
+}
+
+.user-playlist-container {
+    width: 210px;
+    margin-left: 0;
+}
+
+.playlist-item {
+    padding: 4px;
+    padding-left: 0;
+    font-size: 16px !important;
+}
+
+.playlist-link {
+    font-size: 14px !important;
+    letter-spacing: 1px;
+    border-left: 4px solid transparent;
+    width: 100%;
+    padding-left: 10px;
+
+}
+
+.playlist-link:hover {
+    text-decoration: none !important;
+    border-left: 4px solid #f59b23;
+    color: white;
+}
+
+.playlist-link:focus {
+    border-left: 4px solid #f59b23;
+    color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 20px;
+  height: 5px !important;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+.user-pic {
+    position: absolute;
+    top: -18px;
+    left: 89px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: rgb(66, 66, 66);
+}
+
+.greeting-temp {
+   /* position:absolute; */
+}

@@ -6,7 +6,6 @@ class Api::AlbumsController < ApplicationController
 
     def show
         @album = Album.find(params[:id])
-        debugger
         if @album 
             @tracks = @album.tracks
             render "api/albums/show"

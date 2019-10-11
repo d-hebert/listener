@@ -4,7 +4,6 @@ const artistsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ONE_ARTIST:
-            debugger
             return action.artist;
         default:
             return state;

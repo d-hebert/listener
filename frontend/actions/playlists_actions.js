@@ -12,9 +12,26 @@ export const receiveAllPlaylists = (playlists) => {
     }
 }
 
+export const receiveOnePlaylist = (playlist) => {
+    return {
+        type: RECEIVE_ONE_PLAYLIST,
+        playlist
+    }
+}
+
+export const fetchPlaylist = (id) => (dispatch) => {
+    return APIUtil.fetchPlaylists(id)
+        .then(playlist => dispatch(receiveOnePlaylist(playlist)))
+}
+
 export const fetchPlaylists = () => (dispatch) => {
     return APIUtil.fetchPlaylists()
         .then(playlists => dispatch(receiveAllPlaylists(playlists)))
+}
+
+export const createPlaylist = (playlist) => (dispatch) => {
+    return APIUtil.createPlaylist(playlist)
+        .then(playlist => dispatch(receiveOnePlaylist(playlist)))
 }
 
 export const loadingPlaylists = () => {

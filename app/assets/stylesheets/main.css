@@ -46,6 +46,7 @@
     list-style: none;
     justify-content: center;
     align-items: center;
+    z-index: 8;
 }
 
 
@@ -85,7 +86,7 @@
     background: none;
     margin: 0;
     padding: 0;
-    z-index: 5;
+    z-index: 8;
     text-align: center;
     color: whitesmoke;
 }

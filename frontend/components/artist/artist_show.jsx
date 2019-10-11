@@ -6,19 +6,16 @@ class ArtistShow extends React.Component {
     }
 
     componentDidMount () {
-        debugger
         this.props.fetchArtist(this.props.artistId)
     }
 
     loadTrack (id) {
-        debugger
         this.props.load(id);
     }
 
     tracks () {
         const tracks = this.props.artist.tracks
         if (tracks) {
-            debugger
         return tracks.map(track => 
             <li className="list-item">
             <button onClick={() => this.loadTrack({id: track.id})}
@@ -30,7 +27,6 @@ class ArtistShow extends React.Component {
     }
 
     render () {
-        debugger
         if (this.props.artist) {
             return (
                 <div className="artist-show">

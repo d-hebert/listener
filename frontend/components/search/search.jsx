@@ -13,7 +13,6 @@ class Search extends React.Component {
     }
 
     componentDidMount () {
-        debugger
         // look for albums in props
         // this.refs.searchBar.focus()
     }

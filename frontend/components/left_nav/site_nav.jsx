@@ -18,6 +18,10 @@ class SiteNav extends React.Component {
                     <span className="nav-icons"><i className="material-icons nav-icons">search</i></span>
                     <span className="nav-text">Search</span>
             </NavLink>
+            {/* <NavLink exact to="/new" className="site-nav-link create-pl-link">
+                    <span className="nav-icons"><i className="material-icons nav-icons">playlist_add</i></span>
+                    <span className="nav-text">Create Playlist</span> 
+            </NavLink> */}
         </div>
         )
     }

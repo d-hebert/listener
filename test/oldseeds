@@ -18,13 +18,12 @@ Track.destroy_all
 
 User.create!(username: 'dhebert', email: 'd.hebert@live.com', password: 'password')
 guest = User.create!(username: 'guest_user', email: 'guest@listener.com', password: 'password')
-picture = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/face-mask.jpg')
-guest.picture.attach(io: picture, filename: 'mask.jpg')
+
 
 # making artists: //////////////////////////////////////////////////////////////
 
 
-a1 = Artist.create!(name: '猫 シ Corp.')
+a1 = Artist.create!(name: 'd. hebert')
 img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/acrossthepatio.jpg')
 a1.image.attach(io: img, filename: 'acrossthepatio.jpg')
 
@@ -51,9 +50,9 @@ a6.image.attach(io: img, filename: 'himmelsrandt.jpg')
 
 # making albums: ///////////////////////////////////////////////////////////////
 
-a1 = Album.create!(title: 'lofi', artist_id: 1)
-fa1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/cover.png')
-a1.cover_art.attach(io: fa1, filename: "cover.png")
+a1 = Album.create!(title: 'tests', artist_id: 1)
+fa1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png')
+a1.cover_art.attach(io: fa1, filename: "art.jpg")
 
 a2 = Album.create!(title: "Antiphon", artist_id: 2)
 fa2 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/alfamist/front.jpg')
@@ -79,46 +78,12 @@ a6.cover_art.attach(io: fa6, filename: "cover.jpg")
 
 # making tracks: ///////////////////////////////////////////////////////////////
 
-t = Track.create!(title: 'Shinjuku Gyoen', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+01+Shinjuku+Gyoen.mp3')
-t.file.attach(io: f, filename: 'Gyoen.mp3')
 
-t = Track.create!(title: 'Amano', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+02+Amano.mp3')
-t.file.attach(io: f, filename: 'Amano.mp3')
 
-t = Track.create!(title: "Tokyo '82", album_id: 1, artist_id: 1)
-f = open("https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+03+%E3%80%92160-0014+Tokyo+'82.mp3")
-t.file.attach(io: f, filename: "Tokyo '82.mp3")
 
-t = Track.create!(title: 'Late Breakfast', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+04+Late+Breakfast.mp3')
-t.file.attach(io: f, filename: 'Breakfast.mp3')
-
-t = Track.create!(title: 'Rainy Sunday', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+05+Rainy+Sunday.mp3')
-t.file.attach(io: f, filename: 'Sunday.mp3')
-
-t = Track.create!(title: 'Anubias', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+06+Anubias.mp3')
-t.file.attach(io: f, filename: 'Anubias.mp3')
-
-t = Track.create!(title: 'Campus Coffee', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+07+Campus+Coffee.mp3')
-t.file.attach(io: f, filename: 'Coffee.mp3')
-
-t = Track.create!(title: 'Full Moon', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+08+Full+Moon.mp3')
-t.file.attach(io: f, filename: 'Moon.mp3')
-
-t = Track.create!(title: 'Waiting', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+09+Waiting.mp3')
-t.file.attach(io: f, filename: 'Waiting.mp3')
-
-t = Track.create!(title: 'Tears pt.3', album_id: 1, artist_id: 1)
-f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi/%E7%8C%AB+%E3%82%B7+Corp.+-+lofi+-+10+Tears+pt.+3.mp3')
-t.file.attach(io: f, filename: 'tears.mp3')
-
+test_track = Track.create!(title: 'not good not bad', artist_id: 1, album_id: 1)
+test_audio = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/ngnb.mp3')
+test_track.file.attach(io: test_audio, filename: "ngnb.mp3")
 
 # Alfa Mist, artist 2 //////////////
 
@@ -258,50 +223,26 @@ t4.file.attach(io: f4, filename: 'requiem.mp3')
 
 
 # PLAYLISTS /////
-p1 = Playlist.create!(title: 'Crisp', author_id: 2, track_ids: [9, 4, 3, 18, 3, 5, 4, 6])
+p1 = Playlist.create!(title: 'one', author_id: 2, track_ids: [1, 2, 3])
 f1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc1.jpg')
 p1.cover_art.attach(io: f1, filename: 'pc1.jpg')
 
-p2 = Playlist.create!(title: 'FTDIMY', author_id: 2, track_ids: [5, 4, 5, 6, 13, 14, 15])
+p2 = Playlist.create!(title: 'one', author_id: 2, track_ids: [4, 5, 6])
 f2 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc2.jpg')
 p2.cover_art.attach(io: f2, filename: 'pc2.jpg')
 
-p3 = Playlist.create!(title: 'Never Ending', author_id: 2, track_ids: [12, 7, 8, 9])
+p3 = Playlist.create!(title: 'one', author_id: 2, track_ids: [7, 8, 9])
 f3 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc3.jpg')
 p3.cover_art.attach(io: f3, filename: 'pc3.jpg')
 
-p4 = Playlist.create!(title: 'Only Fools', author_id: 2, track_ids: [10, 14, 12, 11, 14, 15, 16, 17, 19])
+p4 = Playlist.create!(title: 'one', author_id: 2, track_ids: [10, 11, 12])
 f4 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc4.jpg')
 p4.cover_art.attach(io: f4, filename: 'pc4.jpg')
 
-p5 = Playlist.create!(title: 'Shorthand', author_id: 2, track_ids: [11, 14, 15, 16, 17, 19])
+p5 = Playlist.create!(title: 'one', author_id: 2, track_ids: [13, 14, 15])
 f5 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc5.jpg')
 p5.cover_art.attach(io: f5, filename: 'pc5.jpg')
 
-p6 = Playlist.create!(title: 'Push & Pull', author_id: 2, track_ids: [16, 17, 18])
-f6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc6.jpg')
-p6.cover_art.attach(io: f6, filename: 'pc6.jpg')
-
-p1 = Playlist.create!(title: 'Winter', author_id: 2, track_ids: [9, 4, 3, 18, 3, 5, 4, 6])
-f1 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc1.jpg')
-p1.cover_art.attach(io: f1, filename: 'pc1.jpg')
-
-p2 = Playlist.create!(title: 'Quiet Mornings', author_id: 2, track_ids: [5, 4, 5, 6, 13, 14, 15])
-f2 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc2.jpg')
-p2.cover_art.attach(io: f2, filename: 'pc2.jpg')
-
-p3 = Playlist.create!(title: 'Covers', author_id: 2, track_ids: [12, 7, 8, 9])
-f3 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc3.jpg')
-p3.cover_art.attach(io: f3, filename: 'pc3.jpg')
-
-p4 = Playlist.create!(title: 'School', author_id: 2, track_ids: [10, 14, 12, 11, 14, 15, 16, 17, 19])
-f4 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc4.jpg')
-p4.cover_art.attach(io: f4, filename: 'pc4.jpg')
-
-p5 = Playlist.create!(title: 'After Work', author_id: 2, track_ids: [11, 14, 15, 16, 17, 19])
-f5 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc5.jpg')
-p5.cover_art.attach(io: f5, filename: 'pc5.jpg')
-
-p6 = Playlist.create!(title: 'Gym', author_id: 2, track_ids: [16, 17, 18])
+p6 = Playlist.create!(title: 'one', author_id: 2, track_ids: [16, 17, 18])
 f6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc6.jpg')
 p6.cover_art.attach(io: f6, filename: 'pc6.jpg')

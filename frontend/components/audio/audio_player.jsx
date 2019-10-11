@@ -18,12 +18,10 @@ class AudioPlayer extends React.Component {
     }
 
     componentWIllMount () {
-        debugger
     }
 
     componentDidMount () {
         if (this.state.queue.length > 0) {
-            debugger
             this.props.load(this.state.queue[0])
         }
         this.audio = document.getElementsByClassName("html5-player")[0]

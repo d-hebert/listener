@@ -1,9 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+import ReactDOM from 'react-dom'
 
 class UserNav extends React.Component {
     constructor (props) {
         super(props)
+
+        this.handleLogout = this.handleLogout.bind(this)
+    }
+
+    handleLogout () {
+        this.props.logout();
     }
 
     format () {
@@ -12,8 +19,9 @@ class UserNav extends React.Component {
             content = (
                 <>
                     <div className="user-nav">
-                    <h4 className="greeting-temp">hi, {this.props.currentUser.username}</h4>
-                    <Link to="/" className="session-button login" onClick={this.props.logout}>LOG OUT</Link>
+                        <div className="user-pic"></div>
+                    <h4 className="greeting-temp">{this.props.currentUser.username}</h4>
+                    <Link to="/" className="session-button login" onClick={this.handleLogout}>LOG OUT</Link>
                     </div>
                 </>
             ) 

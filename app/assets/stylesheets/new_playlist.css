@@ -1,0 +1,120 @@
+.playlist-modal-bg {
+    transition: all 0.1s ease-in-out;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(32, 32, 31, 0.6) 0%, rgba(17, 32, 32, 0.3) 51%, rgba(0, 0, 0, 0.6));
+    z-index: 5;
+}
+
+
+.playlist-modal {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    width: 900px;
+    /* margin: 0 auto; */
+    transform: translate(-50%, -50%);
+    z-index: 7;
+    text-align: center
+}
+
+.new-playlist-header {
+    font-size: 48px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.new-playlist-prompt {
+    text-align: default;
+    position: absolute;
+    top: 135px;
+    left: 0;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.playlist-bar {
+    position: absolute;
+    top: 48%;
+    height: 150px;
+    min-width: 100%;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+    z-index: 6
+}
+
+.new-playlist-input {
+    position: absolute;
+    top: 150px;
+    left: -6px;
+    height: 70px !important;
+    width: 100% !important;
+    font-size: 45px !important;
+    border: none !important;
+    background: none !important;
+    caret-color: #f7b234;
+    font-weight: bolder;
+}
+
+.new-playlist-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.new-playlist-buttons {
+    position: absolute;
+    left: 30%;
+    bottom: -200px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    /* height: 100px; */
+}
+
+.playlist-button {
+    width: 140px !important;
+    height: 25px !important;
+    padding-top: 10px !important;
+    border-radius: 20px !important;
+}
+
+.cancel {
+    background-color: rgb(18, 18, 18);
+    border: 2px solid #b3b3b3;
+    color: #f9f9f9;
+    text-shadow: 0px 0.5px #666464
+}
+
+.create {
+    background-color: #f7b234;
+    border: 2px solid #f7b234 !important;
+    color: #f9f9f9;
+    text-shadow: 0px 0.5px whitesmoke;
+}
+
+.cancel:hover {
+    transition: all 0.05s ease-in-out;
+    transform: scale(1.05);
+    border-color: whitesmoke
+}
+
+.create:hover {
+    transition: all 0.05s ease-in-out;
+    transform: scale(1.05);
+}
+
+.cancel:active {
+    transition: all 0.01s ease-in-out;
+    transform: scale(1.0);
+    border-color: whitesmoke
+}
+
+.create:active {
+    transition: all 0.01s ease-in-out;
+    transform: scale(1.0);
+}
+

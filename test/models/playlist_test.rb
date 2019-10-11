@@ -5,9 +5,9 @@
 #  id         :bigint           not null, primary key
 #  title      :string           not null
 #  author_id  :integer          not null
-#  track_ids  :integer          not null, is an Array
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  track_ids  :integer          default([]), is an Array
 #
 
 require 'test_helper'
