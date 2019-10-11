@@ -5,8 +5,6 @@ by David Hebert
 </p>
   
 <br>
-<br>
-<br>
 
 ## Overview:
 <br>
@@ -16,8 +14,7 @@ Live Application: https://listener-aa.herokuapp.com/#/
 It includes user authentication, playlist management, and a persistent audio player.
 
 <br>
-<br>
-<br>
+
 
 ## Technologies:
 <br>
@@ -26,8 +23,6 @@ It includes user authentication, playlist management, and a persistent audio pla
 * Audio and image files are stored and hosted using **S3** from **Amazon Web Services**. 
 * The frontend is built using **React** and **Redux**.
 
-<br>
-<br>
 <br>
 
 
