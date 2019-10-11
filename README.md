@@ -29,6 +29,7 @@ It includes user authentication, playlist management, and a persistent audio pla
 ## Feature Highlights:
 
 <br>
+<br>
 
 
 <p align="center">
