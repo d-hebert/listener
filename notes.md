@@ -70,3 +70,7 @@ burnt orange
 FF9C1F	BF8841	A6610A	FFB557	FFC984
 
 FFBE00
+
+playlist covers
+//https://www.behance.net/gallery/72153783/Spotify-Playlist-Covers
+//https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US
