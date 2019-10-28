@@ -132,7 +132,11 @@ class AudioPlayer extends React.Component {
         }
     }
 
-    progressBar() {
+    progressScrub (e) {
+        console.log(e.currentTarget.value)
+    }
+
+    progressBar () {
         return(
             <>
         <span className="play-time">{this.state.elapsedTime}</span> 
@@ -140,7 +144,8 @@ class AudioPlayer extends React.Component {
             className="progress-bar"
             type="range"
             name="points"
-            defaultValue="1"
+            defaultValue="0"
+            onChange={(e) => this.progressScrub(e)}
             min="0" max={this.handleLength()} />
         <span className="play-time">{this.state.totalTime}</span> 
         </>
