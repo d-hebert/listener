@@ -14,7 +14,7 @@ class PlaylistShow extends React.Component {
     }
 
     tracks() {
-        const playlist = this.props.playlist[this.props.playlistId]
+        const playlist = this.props.playlists[this.props.playlistId]
         const tracks = playlist.tracks
         if (tracks) {
             return tracks.map(track =>
@@ -28,9 +28,8 @@ class PlaylistShow extends React.Component {
     }
 
     render() {
-        const playlist = this.props.playlist[this.props.playlistId]
+        const playlist = this.props.playlists[this.props.playlistId]
         if (playlist) {
-            debugger
             return (
                 <div className="artist-show">
                     <div className="artist-image-container">

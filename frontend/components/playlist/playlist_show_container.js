@@ -4,10 +4,11 @@ import { fetchPlaylist } from '../../actions/playlists_actions'
 import { load } from '../../actions/session_actions'
 
 const msp = (state, ownProps) => {
-    const playlistId = ownProps.location.playlist_id
-    const playlist = state.entities.playlists
+    // get the playlist ID 
+    const playlistId = ownProps.match.params.id
+    const playlists = state.entities.playlists
     return {
-        playlist,
+        playlists,
         playlistId
     }
 }

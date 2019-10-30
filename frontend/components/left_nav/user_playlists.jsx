@@ -16,9 +16,10 @@ class UserPlaylists extends React.Component {
                 <li className="playlist-item">
                     <NavLink
                         exact to={{
-                            pathname: "/playlist",
+                            pathname: `/playlist/${playlist.id}`,
                             playlist_id: `${playlist.id}`
                         }}
+                        // maybe pass playlistid as a prop
                         className="track-artist-link playlist-link" >
                         {playlist.title}
                     </NavLink>
