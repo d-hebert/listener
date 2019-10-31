@@ -1,27 +1,34 @@
 import React from 'react';
+import AddSongButton from './add_song_button'
 
 class PlaylistShow extends React.Component {
     constructor(props) {
         super(props)
+        
+        this.audio = document.getElementsByClassName("html5-player")[0]
     }
 
     componentDidMount() {
         this.props.fetchPlaylist(this.props.playlistId)
     }
 
-    loadTrack(id) {
+    loadTrack(id, audio) {
         this.props.load(id);
+        audio.play();
     }
+
 
     tracks() {
         const playlist = this.props.playlists[this.props.playlistId]
         const tracks = playlist.tracks
+        const audio = document.getElementsByClassName("html5-player")[0]
         if (tracks) {
             return tracks.map(track =>
                 <li className="list-item">
-                    <button onClick={() => this.loadTrack({ id: track.id })}
+                    <button onClick={() => this.loadTrack({ id: track.id }, audio)}
                         className="track-button" > {track.title}
                     </button>
+                    <AddSongButton /> 
                 </li>
             )
         }
