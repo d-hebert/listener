@@ -45,6 +45,8 @@ class AddSongButton extends React.Component {
 
     handleClick (id) {
         console.log(id)
+        debugger
+        this.props.addToPlaylist()
     }
 
     render () {

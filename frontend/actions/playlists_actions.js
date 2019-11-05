@@ -20,7 +20,8 @@ export const receiveOnePlaylist = (playlist) => {
 }
 
 export const AddToPlaylist = (playlistId, trackId) => (dispatch) => {
-    return APIl
+    return APIUtil.AddToPlaylist(playlistId, trackId)
+        .then(playlists => dispatch(receiveAllPlaylists(playlists)))
 }
 
 export const fetchPlaylist = (id) => (dispatch) => {

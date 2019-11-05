@@ -28,7 +28,7 @@ class PlaylistShow extends React.Component {
                     <button onClick={() => this.loadTrack({ id: track.id }, audio)}
                         className="track-button" > {track.title}
                     </button>
-                    <AddSongButton /> 
+                    <AddSongButton trackId={track.id}/> 
                 </li>
             )
         }

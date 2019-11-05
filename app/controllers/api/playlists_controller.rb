@@ -23,6 +23,7 @@ class Api::PlaylistsController < ApplicationController
         @playlist.track_ids << @track_id 
         if @playlist.save!
             @playlists = Playlist.all
+            render "api/playlists/index"
         else 
             render json: ["Playlist not found!"], status: 404
         end
