@@ -103,6 +103,7 @@ class AudioPlayer extends React.Component {
     }
 
     formatTime(time) {
+        if (isNaN(time)) return '0:00';
         let min = Math.floor(time / 60)
         let sec = time % 60
         if ( min < 10 ) { min = min } 
