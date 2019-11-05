@@ -19,7 +19,7 @@ export const receiveOnePlaylist = (playlist) => {
     }
 }
 
-export const AddToPlaylist = (playlistId, trackId) => (dispatch) => {
+export const addToPlaylist = (playlistId, trackId) => (dispatch) => {
     return APIUtil.AddToPlaylist(playlistId, trackId)
         .then(playlists => dispatch(receiveAllPlaylists(playlists)))
 }

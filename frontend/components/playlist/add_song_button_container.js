@@ -15,4 +15,4 @@ const mdp = (dispatch) => {
     }
 }
 
-export default connect(msp, null)(addSongButton)
+export default connect(msp, mdp)(addSongButton)

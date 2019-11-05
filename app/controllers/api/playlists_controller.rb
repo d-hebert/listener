@@ -16,10 +16,9 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
-    def edit
-        debugger
-        @playlist = Playlist.find(params[playlistId])
-        @track_id = params(trackId)
+    def update
+        @playlist = Playlist.find(params[:id])
+        @track_id = params[:trackId].to_i
         @playlist.track_ids << @track_id 
         if @playlist.save!
             @playlists = Playlist.all

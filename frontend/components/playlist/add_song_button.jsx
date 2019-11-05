@@ -6,9 +6,8 @@ class AddSongButton extends React.Component {
         this.state = {
             active: false,
         }
-
         this.removeMenu = this.removeMenu.bind(this);
-
+        this.handleClick = this.handleClick.bind(this);
         // this.state.active = this.state.active.bind(this)
     }
 
@@ -33,20 +32,18 @@ class AddSongButton extends React.Component {
 
     drawList () {
         const playlists = this.props.playlists
-
+        const trackId = this.props.trackId
         if (playlists) {
             return (playlists.map(playlist =>
-                    <li className="add-pl-item" key={playlist.id} onClick={() => this.handleClick(playlist.id)}>
+                    <li className="add-pl-item" key={playlist.id} onClick={() => this.handleClick(playlist.id, trackId)}>
                         {playlist.title}
                     </li>
             ))
         }
     }
 
-    handleClick (id) {
-        console.log(id)
-        debugger
-        this.props.addToPlaylist()
+    handleClick (playlistId, trackId) {
+        this.props.addToPlaylist(playlistId, trackId)
     }
 
     render () {

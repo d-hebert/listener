@@ -17,10 +17,11 @@ export const createPlaylist = (playlist) => {
 }
 
 export const AddToPlaylist = (playlistId, trackId) => {
+    debugger
     return $.ajax({
-        method: 'EDIT',
-        url: `/api/playlists/${playlistId}/edit`,
-        data: trackId
+        method: 'PATCH',
+        url: `/api/playlists/${playlistId}`,
+        data: {trackId: `${trackId}`}
     })
 }
 
