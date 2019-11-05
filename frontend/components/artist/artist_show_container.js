@@ -3,8 +3,8 @@ import ArtistShow from './artist_show'
 import { fetchArtist } from '../../actions/artist_actions'
 import { load } from '../../actions/session_actions'
 
-const msp = (state, ownProps) => { 
-    const artistId = ownProps.location.artist_id
+const msp = (state, ownProps) => {     
+    const artistId = ownProps.match.params.id
     const artist = state.entities.artists
     return {
         artist,

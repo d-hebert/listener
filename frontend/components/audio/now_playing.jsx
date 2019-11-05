@@ -30,7 +30,7 @@ formatTitle () {
                     <span className="track-artist">
                         <NavLink 
                             exact to={{
-                                pathname: "/artist",
+                                pathname: `/artist/${this.props.track.artist_id}`,
                                 artist_id: `${this.props.track.artist_id}`
                             }}
                             className="track-artist-link" >

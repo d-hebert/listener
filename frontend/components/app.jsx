@@ -34,7 +34,7 @@ const App = () => {
             <img src={window.redbg} className="background" />
             <AuthRoute exact path="/browse" component={HomeIndex} />
             <AuthRoute exact path="/search" component={Search} />
-            <AuthRoute exact path="/artist" component={ArtistShow}/>
+            <AuthRoute exact path="/artist/:id" component={ArtistShow}/>
             <AuthRoute exact path="/playlist/:id" component={PlaylistShow} />
             <AuthRoute exact path="/new" component={NewPlaylist} />
             <Modal />

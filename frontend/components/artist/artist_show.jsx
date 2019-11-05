@@ -1,4 +1,5 @@
 import React from 'react';
+import AddSongButton from '../playlist/add_song_button_container'
 
 class ArtistShow extends React.Component {
     constructor (props) {
@@ -18,9 +19,10 @@ class ArtistShow extends React.Component {
         if (tracks) {
         return tracks.map(track => 
             <li className="list-item">
-            <button onClick={() => this.loadTrack({id: track.id})}
-                className="track-button" > {track.title}
-            </button>         
+                <button onClick={() => this.loadTrack({id: track.id})}
+                    className="track-button" > {track.title}
+                </button>
+                <AddSongButton trackId={track.id} />          
             </li> 
             )
         }
