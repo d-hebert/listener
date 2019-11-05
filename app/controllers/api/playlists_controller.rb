@@ -17,7 +17,16 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def edit
-        @playlist = Playlist.find_by(title: params[:title])
+        debugger
+        @playlist = Playlist.find(params[playlistId])
+        @track_id = params(trackId)
+        @playlist.track_ids << @track_id 
+        if @playlist.save!
+            @playlists = Playlist.all
+        else 
+            render json: ["Playlist not found!"], status: 404
+        end
+
     end
 
     def show

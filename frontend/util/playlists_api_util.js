@@ -16,6 +16,14 @@ export const createPlaylist = (playlist) => {
     })
 }
 
+export const AddToPlaylist = (playlistId, trackId) => {
+    return $.ajax({
+        method: 'EDIT',
+        url: `/api/playlists/${playlistId}/edit`,
+        data: trackId
+    })
+}
+
 export const fetchPlaylist = (playlistId) => {
     return $.ajax({
         method: 'GET',

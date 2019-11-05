@@ -1,5 +1,5 @@
 import React from 'react';
-import AddSongButton from './add_song_button'
+import AddSongButton from './add_song_button_container'
 
 class PlaylistShow extends React.Component {
     constructor(props) {

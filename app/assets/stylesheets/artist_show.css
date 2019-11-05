@@ -56,6 +56,7 @@
 
 .artist-tracks-list {
     list-style: none;
+    padding-right: 10px;
 }
 
 .list-item {
@@ -63,6 +64,7 @@
     justify-content: space-between;
     border-bottom: 0.5px solid rgb(31, 31, 31);
     padding: 8px;
+    padding-top: 10px;
     padding-left: 20px;
 }
 
@@ -90,7 +92,6 @@
 }
 
 .track-button {
-
     color: whitesmoke;
     background: none;
     border: none;
@@ -101,5 +102,44 @@
     vertical-align: left;
     font-size: 13px;
     letter-spacing: 0.25
+}
 
+.add-button {
+    background: none;
+    color: #666464;
+    border: none;
+}
+
+.add-button:hover {
+    transition: all 0.05s ease-in-out;
+    color: whitesmoke;
+    transform: scale(1.01);
+}
+
+.add-pl-menu-cont {
+    position: fixed;
+}
+
+.add-pl-menu {
+    width: 160px;
+    list-style: none;
+    position: relative;
+    left: 650px;
+    list-style: none;
+    padding: 8px;
+    color: #b3b3b3;
+    background-color: #292929;
+    font-size: 15px;
+    letter-spacing: 0.25;
+    border-radius: 9px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+}
+
+.add-pl-item {
+    padding: 5px;
+}
+
+.add-pl-item:hover {
+    transition: all 0.1s ease-in-out;
+    background-color: rgb(49, 49, 49);
 }
