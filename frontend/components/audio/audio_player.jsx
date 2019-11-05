@@ -125,15 +125,21 @@ class AudioPlayer extends React.Component {
     }
 
     handleLength () {
-        if (this.tracklength === 'undefined') {
+        if (this.audio === undefined) {
             return 100
         } else {
-            return this.tracklength
+            if (this.audio.duration > 0) {
+                return this.audio.duration
+            }
+            else {
+                return 100  
+            }
         }
     }
 
     progressScrub (e) {
-        console.log(e.currentTarget.value)
+        let pos = e.currentTarget.value
+        this.audio.currentTime = pos
     }
 
     progressBar () {
