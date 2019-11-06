@@ -12,6 +12,18 @@ export const receiveAllAlbums = (albums) => {
         }
 }
 
+export const receiveOneAlbum = (album) => {
+    return {
+        type: RECEIVE_ONE_ALBUM,
+        album
+    }
+}
+
+export const fetchOneAlbum = () => (dispatch) => {
+    return APIUtil.fetchOneAlbum()
+        .then( albums => dispatch(receiveOneAlbum(album)))
+}
+
 export const fetchAlbums = () => (dispatch) => {
     return APIUtil.fetchAlbums()
         .then( albums => dispatch(receiveAllAlbums(albums)) )

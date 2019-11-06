@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_ALBUMS } from '../actions/albums_actions';
+import { RECEIVE_ALL_ALBUMS, RECEIVE_ONE_ALBUM } from '../actions/albums_actions';
 
 // const _nullState = { id: null }
 
@@ -9,6 +9,8 @@ const albumsReducer = (state = {}, action) => {
         case RECEIVE_ALL_ALBUMS:
             // newState = Object.assign({}, state, action.albums)
             return action.albums;
+        case RECEIVE_ONE_ALBUM:
+            return action.album;
         default:
             return state;
     }
