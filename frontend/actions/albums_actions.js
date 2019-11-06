@@ -19,9 +19,9 @@ export const receiveOneAlbum = (album) => {
     }
 }
 
-export const fetchOneAlbum = () => (dispatch) => {
-    return APIUtil.fetchOneAlbum()
-        .then( albums => dispatch(receiveOneAlbum(album)))
+export const fetchOneAlbum = (albumId) => (dispatch) => {
+    return APIUtil.fetchOneAlbum(albumId)
+        .then( album => dispatch(receiveOneAlbum(album)))
 }
 
 export const fetchAlbums = () => (dispatch) => {

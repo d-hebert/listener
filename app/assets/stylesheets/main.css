@@ -116,3 +116,35 @@
     font-size: 80px !important;
 }
 
+.display-block-title {
+    position: relative;
+    top: -5px;
+    margin-top: 0;
+    padding-left: 30px;
+    font-size: 15px;
+    letter-spacing: 0.75px;
+    color: rgb(219, 219, 219);
+    text-decoration: none;
+}
+
+.display-block-artist {
+    display: block;
+    position: relative;
+    top: -5px;
+    margin-top: 2px;
+    padding-left: 30px;
+    font-size: 14px;
+    letter-spacing: 0.75px;
+    color: rgb(170, 170, 170);
+    text-decoration: none;
+}
+
+.display-block-title:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+.display-block-artist:hover {
+    color: whitesmoke;
+    text-decoration: underline;
+}
+

@@ -8,7 +8,7 @@ export const fetchAlbums = () => {
     })
 }
 
-export const fetchAlbum = (albumId) => {
+export const fetchOneAlbum = (albumId) => {
     return $.ajax({
         method: 'GET',
         url: `/api/albums/${albumId}`,

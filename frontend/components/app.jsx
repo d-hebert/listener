@@ -14,6 +14,7 @@ import ArtistShow from './artist/artist_show_container';
 import NewPlaylist from './left_nav/new_playlist_container';
 import UserPlaylists from './left_nav/user_playlists_container';
 import PlaylistShow from './playlist/playlist_show_container'
+import AlbumShow from './album/album_show_container'
 
 const App = () => {
     return (
@@ -36,6 +37,7 @@ const App = () => {
             <AuthRoute exact path="/search" component={Search} />
             <AuthRoute exact path="/artist/:id" component={ArtistShow}/>
             <AuthRoute exact path="/playlist/:id" component={PlaylistShow} />
+            <AuthRoute exact path="/album/:id" component={AlbumShow} />
             <AuthRoute exact path="/new" component={NewPlaylist} />
             <Modal />
         </div>

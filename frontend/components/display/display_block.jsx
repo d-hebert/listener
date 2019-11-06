@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom'
 
 class DisplayBlock extends React.Component {
     constructor (props) {
@@ -15,7 +16,14 @@ class DisplayBlock extends React.Component {
     }
 
     imageItem (index) {
+        let artistName = null
+        let type = 'playlist'
+        if (this.props.content[index].artist_name) {
+            artistName = this.props.content[index].artist_name
+            type = 'album'
+        }
         return (
+            <div className="image-item-cont">
             <li className="display-block-image-item"
                 style={{
                     backgroundImage: `url(${this.props.content[index].cover_art})`,
@@ -35,6 +43,21 @@ class DisplayBlock extends React.Component {
                     <i className="material-icons md-48 index-play">play_circle_outline</i>
                 </button>
             </li>
+                <NavLink
+                    exact to={{
+                        pathname: `/${type}/${this.props.content[index].id}`,
+                    }}
+                    className="display-block-title" >
+                    {this.props.content[index].title}
+                </NavLink>
+                <NavLink
+                    exact to={{
+                        pathname: `/artist/${this.props.content[index].artist_id}`
+                    }}
+                    className="display-block-artist" >
+                    {artistName}
+                </NavLink>
+            </div>
         )
     }
 
