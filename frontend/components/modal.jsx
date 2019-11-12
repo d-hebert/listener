@@ -19,6 +19,8 @@ const Modal = ({modal, closeModal, clearErrors}) => {
         case 'signup':
             form = <SignupFormContainer />;
             break;
+        case 'splash':
+            form = <Splash />;
         default:
             return null;
     }
