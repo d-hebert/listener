@@ -20,7 +20,8 @@ class ArtistShow extends React.Component {
         return tracks.map(track => 
             <li className="list-item">
                 <button onClick={() => this.loadTrack({id: track.id})}
-                    className="track-button" > {track.title}
+                    className="track-button" 
+                    key={track.id}> {track.title}
                 </button>
                 <AddSongButton trackId={track.id} />          
             </li> 

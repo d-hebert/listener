@@ -32,12 +32,17 @@ class UserPlaylists extends React.Component {
         if (this.props.playlists.length > 0 && this.props.loggedIn) {
             return (
             <div className="user-playlist-container" id="test">
-                    <NavLink exact to="/new" className="site-nav-link create-pl-link">
-                        <span className="nav-icons"><i className="material-icons nav-icons">playlist_add</i></span>
-                        <span className="nav-text create-pl">Create Playlist</span>
-                    </NavLink>
+                   
                 <ul className="user-playlist-list">
                     <li className="playlist-link nav-sub-header">PLAYLISTS</li>
+                        <li><br></br></li>
+                    <li>
+                            <NavLink exact to="/new" className="site-nav-link create-pl-link">
+                                <span className="nav-icons"><i className="material-icons nav-icons">playlist_add</i></span>
+                                <span className="nav-text create-pl">Create Playlist</span>
+                            </NavLink>
+                    </li>
+                        <li><br></br></li>
                     {this.formatPlaylists()}
                 </ul>
             </div>

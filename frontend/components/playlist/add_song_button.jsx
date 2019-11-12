@@ -47,21 +47,24 @@ class AddSongButton extends React.Component {
     }
 
     render () {
-        return (
-            <>
-                <button className="add-button" onClick={(e) => this.buildMenu(e)}>
-                    <i className="material-icons md-18">add</i>
-                </button>
-                { this.state.active ? (
-                    <div className="add-pl-menu-cont">
-                        <ul className="add-pl-menu">
-                            {this.drawList()}
-                        </ul>
-                    </div>
-                    ) : (null)
-                }
-            </>
-        )
+        debugger
+        if (this.props.loggedIn) {
+            return (
+                <>
+                    <button className="add-button" onClick={(e) => this.buildMenu(e)}>
+                        <i className="material-icons md-18">add</i>
+                    </button>
+                    { this.state.active ? (
+                        <div className="add-pl-menu-cont">
+                            <ul className="add-pl-menu">
+                                {this.drawList()}
+                            </ul>
+                        </div>
+                        ) : (null)
+                    }
+                </>
+            ) 
+                } else return (<></>)
     }
 }
 

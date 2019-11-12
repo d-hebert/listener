@@ -4,8 +4,10 @@ import { selectUserPlaylists } from '../../reducers/selectors'
 import { addToPlaylist } from '../../actions/playlists_actions'
 
 const msp = (state) => {
+    debugger
     return {
-        playlists: selectUserPlaylists(state)
+        playlists: selectUserPlaylists(state),
+        loggedIn: Boolean(Object.keys(state.entities.users).length > 0)
     }
 }
 
