@@ -1,14 +1,15 @@
 import React from 'react';
+import HomeIndex from '../home/home_index_container'
 
 class Search extends React.Component {
     constructor (props) {
         super(props);
-
         this.state = {
+            albums: props.entities.albums,
+            artists: props.entities.artists,
+            playlists: props.entities.artists,
             string: "",
-            albums: []
         }
-
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -17,14 +18,21 @@ class Search extends React.Component {
         // this.refs.searchBar.focus()
     }
 
-    handleChange () {
+    handleChange (e) {
         return (
            e => this.setState({ string: e.currentTarget.value })
         )
-    } 
+    }
+
+    display () {
+        return (
+            <HomeIndex kind="search"/>
+        )
+    }
 
     render () {
         return (
+            <>
             <div className="search-container">
                 <input 
                     type="text"
@@ -35,6 +43,8 @@ class Search extends React.Component {
                     ref="searchBar"             
                 />
             </div>
+            {this.display()}
+            </>
         )
     }
 }

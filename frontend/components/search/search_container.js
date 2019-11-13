@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
 import Search from './search'
 
-const msp = () => {
+const msp = (state) => {
+    const entities = state.entities
+    return {
+        entities,
+    }
+}
+
+const mdp = (dispatch) => {
     return {
         
     }
 }
 
-const mdp = () => {
-    return {
-        
-    }
-}
 
-
-export default connect(null, null)(Search);
+export default connect(msp, null)(Search);

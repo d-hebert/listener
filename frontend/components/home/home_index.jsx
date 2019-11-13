@@ -27,11 +27,23 @@ class HomeIndex extends React.Component {
     }
 
     render () {
+        debugger
         let loading = this.props.loading
         console.log("loading? " + loading)
         if (loading) {
             return (
                 <LoadingFilter />
+            )
+        } else if (this.props.kind) {
+            return (
+                <div className="index-main search-index">
+                    <div className="index-part index-albums">
+                        {this.formatAlbums()}
+                    </div>
+                    <div className="index-part index-playlists">
+                        {this.formatPlaylists()}
+                    </div>
+                </div>
             )
         } else {
             return (
