@@ -21,15 +21,15 @@ class UserNav extends React.Component {
                     <div className="user-nav">
                         <div className="user-pic"></div>
                     <h4 className="greeting-temp">{this.props.currentUser.username}</h4>
-                    <Link to="/" className="session-button login" onClick={this.handleLogout}>LOG OUT</Link>
+                    <Link to="/browse" className="session-button login" onClick={this.handleLogout}>LOG OUT</Link>
                     </div>
                 </>
             ) 
         } else {
             content = (
                 <div className="user-nav">
-                <Link to="/" className="session-button signup" onClick={() => this.props.openModal('signup')}>SIGN UP</Link>
-                <Link to="/" className="session-button login" onClick={() => this.props.openModal('login')}>LOG IN</Link>
+                <Link to="/browse" className="session-button signup" onClick={() => this.props.openModal('signup')}>SIGN UP</Link>
+                <Link to="/browse" className="session-button login" onClick={() => this.props.openModal('login')}>LOG IN</Link>
                 </div>
             )
         }

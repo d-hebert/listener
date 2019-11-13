@@ -124,8 +124,10 @@
 .add-pl-menu {
     width: 160px;
     list-style: none;
-    position: relative;
-    left: 650px;
+    position: absolute;
+    left: 690px;
+    height: 250px;
+    overflow: scroll;
     list-style: none;
     padding: 8px;
     color: #b3b3b3;

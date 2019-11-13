@@ -35,6 +35,8 @@ const App = () => {
             {/* <NowPlaying /> */}
             <img src={window.redbg} className="background" />
             <Route exact path="/browse" component={HomeIndex} />
+            <Redirect from="/" to="/browse" />
+            <Redirect from="/#/" to="/browse" />
             <AuthRoute exact path="/search" component={Search} />
             <AuthRoute exact path="/artist/:id" component={ArtistShow}/>
             <AuthRoute exact path="/playlist/:id" component={PlaylistShow} />

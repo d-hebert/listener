@@ -55,11 +55,14 @@ class AddSongButton extends React.Component {
                         <i className="material-icons md-18">add</i>
                     </button>
                     { this.state.active ? (
-                        <div className="add-pl-menu-cont">
-                            <ul className="add-pl-menu">
-                                {this.drawList()}
-                            </ul>
-                        </div>
+                        <ul className="add-pl-menu">
+                            {this.drawList()}
+                        </ul>
+                        // <div className="add-pl-menu-cont">
+                        //     <ul className="add-pl-menu">
+                        //         {this.drawList()}
+                        //     </ul>
+                        // </div>
                         ) : (null)
                     }
                 </>

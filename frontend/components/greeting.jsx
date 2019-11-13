@@ -11,7 +11,7 @@ const Greeting = (props) => {
             <div className="splash">
             <h1> Music for everyone.</h1>
             <h2> Dozens of songs.   No credit card needed.</h2>
-            <Link to="/" className="launch-button launch" onClick={() => props.openModal('signup')}>SIGN UP FOR LISTENER</Link>
+            <Link to="/browse" className="launch-button launch" onClick={() => props.openModal('signup')}>SIGN UP FOR LISTENER</Link>
             </div>
         )
     }
