@@ -5,25 +5,23 @@ import { openModal } from '../actions/modal_actions'
 
 
 const Auth = ({ component: Component, path, loggedIn, openModal, exact }) => {
-    debugger
     return (
         <>
             <Route 
                 path={path} 
                 exact={exact} 
-                // render={props =>
-                //     loggedIn ? <Component {...props} /> : <Redirect to="/" /> 
-                // }
                 render={props =>
-                    <Component {...props} />
+                    loggedIn ? <Component {...props} /> : <Redirect to="/greeting" />
                 }
+                // render={props =>
+                //     <Component {...props} />
+                // }
             />
         </>
     )
 }
 
 const msp = state => {
-    debugger
     return { loggedIn: Boolean(Object.keys(state.entities.users).length > 0) }
 }
 

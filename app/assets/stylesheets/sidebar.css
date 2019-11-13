@@ -235,3 +235,34 @@
 .greeting-temp {
    /* position:absolute; */
 }
+
+.spacer {
+    height: 60px !important;
+}
+
+.credit {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.icons-special {
+    display: flex !important;
+    justify-content: space-around;
+    padding: 0 !important;
+    padding-top: 20px !important;
+    font-size: 18px;
+}
+
+.ico {
+    border: none !important;
+}
+
+.ico:hover {
+    transition: all 0.25s ease-in;
+    transform: scale(1.08);
+    color: white !important;
+}
+
+.ico:focus {
+    color: white;
+}

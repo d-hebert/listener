@@ -15,6 +15,7 @@ import NewPlaylist from './left_nav/new_playlist_container';
 import UserPlaylists from './left_nav/user_playlists_container';
 import PlaylistShow from './playlist/playlist_show_container'
 import AlbumShow from './album/album_show_container'
+import Greeting from './greeting'
 
 const App = () => {
     return (
@@ -33,13 +34,14 @@ const App = () => {
             <AudioPlayerContainer />
             {/* <NowPlaying /> */}
             <img src={window.redbg} className="background" />
-            <AuthRoute exact path="/browse" component={HomeIndex} />
+            <Route exact path="/browse" component={HomeIndex} />
             <AuthRoute exact path="/search" component={Search} />
             <AuthRoute exact path="/artist/:id" component={ArtistShow}/>
             <AuthRoute exact path="/playlist/:id" component={PlaylistShow} />
             <AuthRoute exact path="/album/:id" component={AlbumShow} />
             <AuthRoute exact path="/new" component={NewPlaylist} />
             <Modal />
+            <Route exact path="/greeting" component={Greeting} />
         </div>
     )
 }
