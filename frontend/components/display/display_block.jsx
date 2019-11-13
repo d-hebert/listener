@@ -18,6 +18,10 @@ class DisplayBlock extends React.Component {
     imageItem (index) {
         let artistName = null
         let type = 'playlist'
+        let image = "https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png"
+        if (this.props.content[index].cover_art) {
+            image = this.props.content[index].cover_art
+        }
         if (this.props.content[index].artist_name) {
             artistName = this.props.content[index].artist_name
             type = 'album'
@@ -26,7 +30,7 @@ class DisplayBlock extends React.Component {
             <div className="image-item-cont">
             <li className="display-block-image-item"
                 style={{
-                    backgroundImage: `url(${this.props.content[index].cover_art})`,
+                    backgroundImage: `url(${image})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat'

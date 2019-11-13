@@ -36,11 +36,17 @@ class PlaylistShow extends React.Component {
 
     render() {
         const playlist = this.props.playlists[this.props.playlistId]
+        
         if (playlist) {
+            let image = "https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png"
+            if (playlist.cover_art != 'blank') {
+                debugger
+                image = playlist.cover_art
+            }
             return (
                 <div className="artist-show">
                     <div className="artist-image-container">
-                        <img src={playlist.cover_art} className="artist-image" />
+                        <img src={image} className="artist-image" />
                     </div>
                     <h4 className="artist-show-tag">PLAYLIST</h4>
                     <h1 className="artist-show-header">{playlist.title}</h1>

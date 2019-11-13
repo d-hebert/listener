@@ -19,7 +19,7 @@ class UserNav extends React.Component {
             content = (
                 <>
                     <div className="user-nav">
-                        <div className="user-pic"></div>
+                        <img className="user-pic" src="https://github.com/d-hebert/listener/blob/master/userbasic.png?raw=true" alt="profile picture"/>
                     <h4 className="greeting-temp">{this.props.currentUser.username}</h4>
                     <Link to="/browse" className="session-button login" onClick={this.handleLogout}>LOG OUT</Link>
                     </div>

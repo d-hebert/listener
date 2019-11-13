@@ -3,8 +3,7 @@ import addSongButton from './add_song_button'
 import { selectUserPlaylists } from '../../reducers/selectors'
 import { addToPlaylist } from '../../actions/playlists_actions'
 
-const msp = (state) => {
-    debugger
+const msp = (state) => {  
     return {
         playlists: selectUserPlaylists(state),
         loggedIn: Boolean(Object.keys(state.entities.users).length > 0)

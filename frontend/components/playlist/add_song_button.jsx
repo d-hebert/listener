@@ -47,7 +47,6 @@ class AddSongButton extends React.Component {
     }
 
     render () {
-        debugger
         if (this.props.loggedIn) {
             return (
                 <>
