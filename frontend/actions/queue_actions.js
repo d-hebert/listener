@@ -1,4 +1,5 @@
 export const PREPARE_QUEUE = 'PREPARE_QUEUE';
+export const SHUFFLE_QUEUE = 'SHUFFLE_QUEUE';
 
 export const prepareQueue = track_ids => {
     return {
@@ -6,3 +7,4 @@ export const prepareQueue = track_ids => {
         track_ids
     }
 }
+

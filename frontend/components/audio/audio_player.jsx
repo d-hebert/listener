@@ -5,6 +5,9 @@ import NowPlaying from './now_playing_container'
 class AudioPlayer extends React.Component {
     constructor (props) {
         super(props)
+        const shuffled = this.props.queue.slice().sort(() => (.5 - Math.random()))
+        const origQueue = this.props.queue.slice();
+        debugger
         this.state = {
             elapsedTime: '0:00',
             totalTime: '0:00',
@@ -13,7 +16,10 @@ class AudioPlayer extends React.Component {
             trackUrl: this.props.trackUrl,
             volume: 65,
             muted: false,
-            queue: this.props.queue
+            shuffled: false,
+            queue: this.props.queue,
+            repeating: false,
+            origQueue,
         }
     }
 
@@ -71,6 +77,66 @@ class AudioPlayer extends React.Component {
            default:
                break;
        }
+    }
+
+    shuffleButton () {
+        if (this.state.shuffled === true) {
+            return (<button className="player-buttons shuffle-true" onClick={() => this.shuffle('undo')}><i className="material-icons">shuffle </i></button>)
+        } else if (this.state.shuffled === false) {
+            return (<button className="player-buttons shuffle-false" onClick={() => this.shuffle('do')}><i className="material-icons">shuffle </i></button>)
+        }
+    }
+
+    shuffle(check) {
+        const shuffled = this.props.queue.slice().sort(() => (.5 - Math.random()));
+        const original = this.props.queue.slice()
+        switch (check) {
+            case 'do':
+                this.props.prepareQueue(shuffled);
+                this.setState({ shuffled: true });
+                break;
+            case 'undo':
+                this.props.prepareQueue(original);
+                this.setState({ shuffled: false });
+                break;
+            default:
+                break;
+        }
+    }
+
+    repeatButton() {
+        if (this.state.repeating === true) {
+            return (<button className="player-buttons repeat-true" onClick={() => this.repeat('undo')}><i className="material-icons">repeat </i></button>);
+        } else if (this.state.repeating === false) {
+            return (<button className="player-buttons repeat-false" onClick={() => this.repeat('do')}><i className="material-icons">repeat </i></button>);
+        }
+    }
+
+    repeat(check) {
+        switch (check) {
+            case 'do':
+                this.audio.removeEventListener('ended', () => {
+                    this.skip('forward');
+                })
+                this.audio.addEventListener('ended', () => {
+                    this.audio.currentTime = 0; 
+                    this.audio.play();
+                })
+                this.setState({ repeating: true });
+                break;
+            case 'undo':
+                this.audio.removeEventListener('ended', () => {
+                    this.audio.currentTime = 0;
+                    this.audio.play();
+                })
+                this.audio.removeEventListener('ended', () => {
+                    this.skip('forward');
+                })
+                this.setState({ repeating: false })
+                break;
+            default:
+                break;
+    }
     }
 
     skip(direction) {
@@ -233,6 +299,8 @@ class AudioPlayer extends React.Component {
                     {this.progressBar()}
                     {this.playPause()}
                     {this.skipButton('forward')}
+                    {this.shuffleButton()}
+                    {this.repeatButton()}
                 </div>
                 <div className="audio-player-right">
                     {this.muteButton()}

@@ -81,8 +81,8 @@ class DisplayBlock extends React.Component {
                     {this.imageItem(3)}
                     {this.imageItem(4)}
                     {this.imageItem(5)}
-                    {this.imageItem(4)}
-                    {this.imageItem(3)}
+                    {this.imageItem(6)}
+                    {this.imageItem(7)}
                 </ul>
             )
         } else {

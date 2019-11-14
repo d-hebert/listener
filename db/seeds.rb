@@ -48,6 +48,13 @@ a6 = Artist.create!(name: 'Himmelsrandt')
 img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/artist+show+pics/artistpics/himmelsrandt.jpg') 
 a6.image.attach(io: img, filename: 'himmelsrandt.jpg')
 
+a7 = Artist.create!(name: 'Cloudkicker')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/cloudkickerartist.jpg')
+a7.image.attach(io: img, filename: 'cloudkickerartist.jpg')
+
+a8 = Artist.create!(name: 'Handwrist')
+img = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwristartist.jpg')
+a8.image.attach(io: img, filename: 'handwristartist.jpg')
 
 # making albums: ///////////////////////////////////////////////////////////////
 
@@ -75,6 +82,13 @@ a6 = Album.create!(title: 'V A L E', artist_id: 6)
 fa6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/Himmelsrandt+-+V+A+L+E/cover.jpg')
 a6.cover_art.attach(io: fa6, filename: "cover.jpg")
 
+a7 = Album.create!(title: 'Let Yourself Be Huge', artist_id: 7)
+fa7 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/cover.jpg')
+a7.cover_art.attach(io: fa7, filename: "cover.jpg")
+
+a8 = Album.create!(title: 'Paranoia Hotel', artist_id: 8)
+fa8 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwrist+-+Paranoia+Hotel/cover.jpg')
+a8.cover_art.attach(io: fa8, filename: "cover.jpg")
 
 
 # making tracks: ///////////////////////////////////////////////////////////////
@@ -256,6 +270,50 @@ f4 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/Himmelsrandt+-+V
 t4.file.attach(io: f4, filename: 'requiem.mp3')
 
 
+# /////// Cloudkicker
+t = Track.create!(title: 'Welcome Back', album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+01+Welcome+back.mp3')
+t.file.attach(io: f, filename: 'back.mp3')
+t = Track.create!(title: 'Explore, Be Curious', album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+02+Explore%2C+be+curious.mp3')
+t.file.attach(io: f, filename: 'curious.mp3')
+t = Track.create!(title: 'The Word Water', album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+03+The+word+water.mp3')
+t.file.attach(io: f, filename: 'water.mp3')
+t = Track.create!(title: 'You and Yours', album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+04+You+and+yours.mp3')
+t.file.attach(io: f, filename: 'yours.mp3')
+t = Track.create!(title: 'One, Many', album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+05+One%2C+many.mp3')
+t.file.attach(io: f, filename: 'many.mp3')
+t = Track.create!(title: "It's Inside Me, and I'm Inside It", album_id: 7, artist_id: 7)
+f = open("https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+06+It's+inside+me%2C+and+I'm+inside+it.mp3")
+t.file.attach(io: f, filename: 'it.mp3')
+t = Track.create!(title: "This isn't", album_id: 7, artist_id: 7)
+f = open("https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+07+This+isn't.mp3")
+t.file.attach(io: f, filename: 'isnt.mp3')
+t = Track.create!(title: "Let Yourself Be Huge", album_id: 7, artist_id: 7)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/Cloudkicker+-+Let+Yourself+Be+Huge/Cloudkicker+-+Let+Yourself+Be+Huge+-+08+Let+yourself+be+huge.mp3')
+t.file.attach(io: f, filename: 'huge.mp3')
+
+
+# /////// Handwrist
+
+t = Track.create!(title: 'Reception', album_id: 8, artist_id: 8)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwrist+-+Paranoia+Hotel/handwrist+-+Paranoia+Hotel+-+01+Reception.mp3')
+t.file.attach(io: f, filename: 'reception.mp3')
+t = Track.create!(title: 'Elevator Malaise', album_id: 8, artist_id: 8)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwrist+-+Paranoia+Hotel/handwrist+-+Paranoia+Hotel+-+02+Elevator+Malaise.mp3')
+t.file.attach(io: f, filename: 'malaise.mp3')
+t = Track.create!(title: 'Panic Room', album_id: 8, artist_id: 8)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwrist+-+Paranoia+Hotel/handwrist+-+Paranoia+Hotel+-+03+Panic+Room.mp3')
+t.file.attach(io: f, filename: 'room.mp3')
+t = Track.create!(title: 'Emergency Exit', album_id: 8, artist_id: 8)
+f = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/new+seeds/handwrist+-+Paranoia+Hotel/handwrist+-+Paranoia+Hotel+-+04+Emergency+Exit.mp3')
+t.file.attach(io: f, filename: 'exit.mp3')
+
+
+
 
 # PLAYLISTS /////
 p1 = Playlist.create!(title: 'Crisp', author_id: 2, track_ids: [9, 4, 3, 18, 3, 5, 4, 6])
@@ -305,3 +363,4 @@ p5.cover_art.attach(io: f5, filename: 'pc5.jpg')
 p6 = Playlist.create!(title: 'Gym', author_id: 2, track_ids: [16, 17, 18])
 f6 = open('https://listener-aa-seeds.s3.us-east-2.amazonaws.com/playlist+covers/pc6.jpg')
 p6.cover_art.attach(io: f6, filename: 'pc6.jpg')
+
