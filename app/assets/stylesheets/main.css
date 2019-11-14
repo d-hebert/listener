@@ -24,6 +24,7 @@
     flex-direction: column;
     overflow-wrap: normal;
     z-index: -1;
+    overflow: auto;
     /* z-index: 10; */
 }
 
@@ -32,12 +33,13 @@
     width: 100%;
     background: none;
     /* border: 1px solid white; */
-    overflow-wrap: normal;
+    /* overflow-wrap: normal; */
     display: flex;
     flex-direction: column;
     overflow: hidden;
       justify-content: left;
     align-items: flex-start;
+    overflow: auto;
 }
 
 .display-block-image-container {
