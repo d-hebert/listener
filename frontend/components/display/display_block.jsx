@@ -22,6 +22,7 @@ class DisplayBlock extends React.Component {
         if (this.props.content[index].cover_art) {
             image = this.props.content[index].cover_art
         }
+        if (image === 'blank') { image = "https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png" }
         if (this.props.content[index].artist_name) {
             artistName = this.props.content[index].artist_name
             type = 'album'

@@ -4,6 +4,7 @@ html {
 
 body {
     min-width: 800px;
+    max-width: 100%;
     display: block;
     background: black;
     color: white;
@@ -19,7 +20,7 @@ body {
  .background {
     min-height: 100%;
     min-width: 100%;
-     width: 100%;
+    width: 100%;
     height: auto;
     position: fixed;
     top: 0;
@@ -74,6 +75,7 @@ input[type="text"]:active,
 
  .app {
      display: flex;
+     width: 100vh;
  }
 
  img {
