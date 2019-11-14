@@ -34,6 +34,9 @@ class AudioPlayer extends React.Component {
                 this.slider.value = this.audio.currentTime;
             }, 500);
         };
+        this.audio.addEventListener('ended', () => {
+            this.skip('forward');
+        })
         this.currentTime = this.audio.currentTime;
         this.trackLength = trackLength
         this.timer = null;
@@ -83,6 +86,11 @@ class AudioPlayer extends React.Component {
                 if (newPos < min) {newPos = min}
                 this.props.load({ id: this.props.queue[newPos] });
                 this.setState({ trackId: this.props.queue[newPos] });
+                this.audio.play();
+                setTimeout(() => {
+                    this.setState({ playing: true });
+                    this.audio.play();
+                }, 100) 
                 break;
             case 'forward':
                 this.audio.pause()
@@ -91,6 +99,10 @@ class AudioPlayer extends React.Component {
                 if (newPos > max) { newPos = max }
                 this.props.load({ id: this.props.queue[newPos] });
                 this.setState({ trackId: this.props.queue[newPos] });
+                setTimeout(() => {
+                    this.setState({ playing: true });
+                    this.audio.play();
+                }, 100) 
                 break;
             default:
                 break;
@@ -199,7 +211,6 @@ class AudioPlayer extends React.Component {
                     </button>
                 )
             } else if (this.state.muted === false) {
-                debugger
                 return (
                     <button className="player-buttons mute-button" onClick={() => this.mute()}>
                         <i className="material-icons mute-button">
@@ -213,7 +224,7 @@ class AudioPlayer extends React.Component {
     render () {
         return (
             <div className="audio-player">
-                <audio hidden controls className="html5-player" src={this.props.trackUrl}> </audio>
+                <audio hidden controls className="html5-player" src={this.props.trackUrl} > </audio>
                 <div className="audio-player-left">
                     <NowPlaying />
                 </div>
