@@ -112,7 +112,8 @@ class AudioPlayer extends React.Component {
     }
 
     playPause () {
-        if (this.state.playing === false) {
+        const audio = this.audio
+        if (audio && this.state.playing === false || audio && audio.paused) {
             return (
             <button className="player-buttons play-pause" onClick={() => this.handleClick('play')}>
                 <i className="material-icons md-48">play_circle_outline</i>
@@ -189,19 +190,24 @@ class AudioPlayer extends React.Component {
     }
 
     muteButton () {
-            // if (this.state.muted === true) {
+            if (this.state.muted === true) {
                 return (
                     <button className="player-buttons mute-button" onClick={() => this.mute()}>
-                        <i className="fas fa-volume-mute"></i>
+                        <i className="material-icons mute-button">
+                            volume_off
+                        </i>
                     </button>
                 )
-            // } else {
-            //     return (
-            //         <button className="player-buttons mute-button" onClick={() => this.mute()}>
-            //             <i className="fas fa-volume-up"></i>
-            //         </button>
-            //     )
-            // }
+            } else if (this.state.muted === false) {
+                debugger
+                return (
+                    <button className="player-buttons mute-button" onClick={() => this.mute()}>
+                        <i className="material-icons mute-button">
+                            volume_up
+                        </i>
+                    </button>
+                )
+            }
     }
 
     render () {

@@ -27,7 +27,6 @@ class HomeIndex extends React.Component {
     }
 
     render () {
-        debugger
         let loading = this.props.loading
         console.log("loading? " + loading)
         if (loading) {
