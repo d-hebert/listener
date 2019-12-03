@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 const Greeting = (props) => {
 
     const display = () => {
-        debugger
         return (
             <div className="splash">
             <h1> Music for everyone.</h1>

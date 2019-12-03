@@ -7,7 +7,6 @@ class AudioPlayer extends React.Component {
         super(props)
         const shuffled = this.props.queue.slice().sort(() => (.5 - Math.random()))
         const origQueue = this.props.queue.slice();
-        debugger
         this.state = {
             elapsedTime: '0:00',
             totalTime: '0:00',
