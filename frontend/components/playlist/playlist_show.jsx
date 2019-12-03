@@ -40,7 +40,6 @@ class PlaylistShow extends React.Component {
         if (playlist) {
             let image = "https://listener-aa-seeds.s3.us-east-2.amazonaws.com/art.png"
             if (playlist.cover_art != 'blank') {
-                debugger
                 image = playlist.cover_art
             }
             return (

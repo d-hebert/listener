@@ -17,7 +17,6 @@ export const createPlaylist = (playlist) => {
 }
 
 export const AddToPlaylist = (playlistId, trackId) => {
-    debugger
     return $.ajax({
         method: 'PATCH',
         url: `/api/playlists/${playlistId}`,
